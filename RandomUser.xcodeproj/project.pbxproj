@@ -14,18 +14,10 @@
 		F2F81A3F26CC7C960094BC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3E26CC7C960094BC45 /* Assets.xcassets */; };
 		F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */; };
 		F2F81A4D26CC7C970094BC45 /* RandomUserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A4C26CC7C970094BC45 /* RandomUserTests.swift */; };
-		F2F81A5826CC7C970094BC45 /* RandomUserUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A5726CC7C970094BC45 /* RandomUserUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F2F81A4926CC7C970094BC45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2F81A3126CC7C940094BC45;
-			remoteInfo = RandomUser;
-		};
-		F2F81A5426CC7C970094BC45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
 			proxyType = 1;
@@ -46,9 +38,6 @@
 		F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F81A4C26CC7C970094BC45 /* RandomUserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserTests.swift; sourceTree = "<group>"; };
 		F2F81A4E26CC7C970094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2F81A5326CC7C970094BC45 /* RandomUserUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F81A5726CC7C970094BC45 /* RandomUserUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomUserUITests.swift; sourceTree = "<group>"; };
-		F2F81A5926CC7C970094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +55,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F81A5026CC7C970094BC45 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +63,6 @@
 			children = (
 				F2F81A3426CC7C940094BC45 /* RandomUser */,
 				F2F81A4B26CC7C970094BC45 /* RandomUserTests */,
-				F2F81A5626CC7C970094BC45 /* RandomUserUITests */,
 				F2F81A3326CC7C940094BC45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +72,6 @@
 			children = (
 				F2F81A3226CC7C940094BC45 /* RandomUser.app */,
 				F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */,
-				F2F81A5326CC7C970094BC45 /* RandomUserUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,15 +97,6 @@
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
 			);
 			path = RandomUserTests;
-			sourceTree = "<group>";
-		};
-		F2F81A5626CC7C970094BC45 /* RandomUserUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F2F81A5726CC7C970094BC45 /* RandomUserUITests.swift */,
-				F2F81A5926CC7C970094BC45 /* Info.plist */,
-			);
-			path = RandomUserUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,24 +137,6 @@
 			productReference = F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2F81A5226CC7C970094BC45 /* RandomUserUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2F81A6226CC7C970094BC45 /* Build configuration list for PBXNativeTarget "RandomUserUITests" */;
-			buildPhases = (
-				F2F81A4F26CC7C970094BC45 /* Sources */,
-				F2F81A5026CC7C970094BC45 /* Frameworks */,
-				F2F81A5126CC7C970094BC45 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2F81A5526CC7C970094BC45 /* PBXTargetDependency */,
-			);
-			name = RandomUserUITests;
-			productName = RandomUserUITests;
-			productReference = F2F81A5326CC7C970094BC45 /* RandomUserUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +150,6 @@
 						CreatedOnToolsVersion = 12.5.1;
 					};
 					F2F81A4726CC7C970094BC45 = {
-						CreatedOnToolsVersion = 12.5.1;
-						TestTargetID = F2F81A3126CC7C940094BC45;
-					};
-					F2F81A5226CC7C970094BC45 = {
 						CreatedOnToolsVersion = 12.5.1;
 						TestTargetID = F2F81A3126CC7C940094BC45;
 					};
@@ -221,7 +170,6 @@
 			targets = (
 				F2F81A3126CC7C940094BC45 /* RandomUser */,
 				F2F81A4726CC7C970094BC45 /* RandomUserTests */,
-				F2F81A5226CC7C970094BC45 /* RandomUserUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -238,13 +186,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F2F81A4626CC7C970094BC45 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F81A5126CC7C970094BC45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,14 +213,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F81A4F26CC7C970094BC45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F2F81A5826CC7C970094BC45 /* RandomUserUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -287,11 +220,6 @@
 			isa = PBXTargetDependency;
 			target = F2F81A3126CC7C940094BC45 /* RandomUser */;
 			targetProxy = F2F81A4926CC7C970094BC45 /* PBXContainerItemProxy */;
-		};
-		F2F81A5526CC7C970094BC45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2F81A3126CC7C940094BC45 /* RandomUser */;
-			targetProxy = F2F81A5426CC7C970094BC45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -513,46 +441,6 @@
 			};
 			name = Release;
 		};
-		F2F81A6326CC7C970094BC45 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4ZUPHQCZR;
-				INFOPLIST_FILE = RandomUserUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mario.RandomUserUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RandomUser;
-			};
-			name = Debug;
-		};
-		F2F81A6426CC7C970094BC45 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4ZUPHQCZR;
-				INFOPLIST_FILE = RandomUserUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mario.RandomUserUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RandomUser;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -579,15 +467,6 @@
 			buildConfigurations = (
 				F2F81A6026CC7C970094BC45 /* Debug */,
 				F2F81A6126CC7C970094BC45 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F81A6226CC7C970094BC45 /* Build configuration list for PBXNativeTarget "RandomUserUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2F81A6326CC7C970094BC45 /* Debug */,
-				F2F81A6426CC7C970094BC45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
