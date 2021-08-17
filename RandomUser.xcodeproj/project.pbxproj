@@ -13,6 +13,8 @@
 		F2F81A3D26CC7C940094BC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3B26CC7C940094BC45 /* Main.storyboard */; };
 		F2F81A3F26CC7C960094BC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3E26CC7C960094BC45 /* Assets.xcassets */; };
 		F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */; };
+		F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6726CC80B60094BC45 /* HTTPClient.swift */; };
+		F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		F2F81A4326CC7C960094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F81A4E26CC7C970094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2F81A6726CC80B60094BC45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,7 @@
 		F2F81A3426CC7C940094BC45 /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
+				F2F81A6526CC807E0094BC45 /* Networking */,
 				F2F81A3526CC7C940094BC45 /* AppDelegate.swift */,
 				F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */,
 				F2F81A3926CC7C940094BC45 /* ProfileViewController.swift */,
@@ -94,6 +99,31 @@
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
 			);
 			path = RandomUserTests;
+			sourceTree = "<group>";
+		};
+		F2F81A6526CC807E0094BC45 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A6626CC80870094BC45 /* Shared API */,
+				F2F81A6926CC813E0094BC45 /* Shared API Infra */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F2F81A6626CC80870094BC45 /* Shared API */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A6726CC80B60094BC45 /* HTTPClient.swift */,
+			);
+			path = "Shared API";
+			sourceTree = "<group>";
+		};
+		F2F81A6926CC813E0094BC45 /* Shared API Infra */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */,
+			);
+			path = "Shared API Infra";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */,
+				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
+				F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */,
 				F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
