@@ -61,7 +61,7 @@ class ProfileUserLoaderTests: XCTestCase {
     let (sut, client) = makeSUT()
     let clientError = NSError(domain: "clientError", code: 0)
         
-    expect(sut, completesWith: clientError, when: {
+    expect(sut, completesWith: .failure(clientError), when: {
       client.complete(with: clientError)
     })
   }
@@ -69,7 +69,7 @@ class ProfileUserLoaderTests: XCTestCase {
   func test_load_deliversInvalidDataErrorOnSuccessfulRespondeWithInvalidData() {
     let (sut, client) = makeSUT()
         
-    expect(sut, completesWith: ProfileUserLoader.Error.invalidData, when: {
+    expect(sut, completesWith: .failure(ProfileUserLoader.Error.invalidData), when: {
       client.complete(withStatusCode: 200, data: Data("invalid json".utf8))
     })
   }
@@ -95,27 +95,11 @@ class ProfileUserLoaderTests: XCTestCase {
                             latitude: "-68.1548", 
                             longitude: "-73.3002", 
                             postcode: "B9Y 6D8")
-    let json = makeJSON(userItem.json)
-    let exp = expectation(description: "Wait for completion")
     
-    let expectedUser = userItem.model
-    
-    sut.load { receivedResult in
-      switch receivedResult {
-      case .success(let receivedUser):
-        XCTAssertEqual(expectedUser, receivedUser)
-        
-      default:
-        XCTFail("Expected result \(expectedUser) got \(receivedResult) instead")
-      }
-      
-      exp.fulfill()
-    }
-    
-    
-    client.complete(withStatusCode: 200, data: json)
-    
-    wait(for: [exp], timeout: 0.1)
+    expect(sut, completesWith: .success(userItem.model), when: {
+      let json = makeJSON(userItem.json) 
+      client.complete(withStatusCode: 200, data: json)
+    })
   }
   
   // MARK: - Helpers
@@ -129,16 +113,19 @@ class ProfileUserLoaderTests: XCTestCase {
     return (sut, client)
   }
   
-  private func expect(_ sut: ProfileUserLoader, completesWith expectedError: Error, when action: () -> Void) {
+  private func expect(_ sut: ProfileUserLoader, completesWith expectedResult: ProfileUserLoader.Result, when action: () -> Void) {
     let exp = expectation(description: "Wait for completion")
     
     sut.load { receivedResult in
-      switch receivedResult {
-      case .failure(let error as NSError):
-        XCTAssertEqual(error, expectedError as NSError)
+      switch (receivedResult, expectedResult) {
+      case let (.success(receivedItem), .success(expectedItem)):
+        XCTAssertEqual(receivedItem, expectedItem)
+        
+      case let (.failure(receivedError as NSError), .failure(expectedError as NSError)):
+        XCTAssertEqual(receivedError, expectedError)
         
       default:
-        XCTFail("Expected result \(expectedError) got \(receivedResult) instead")
+        XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
       }
       
       exp.fulfill()
