@@ -18,10 +18,10 @@
 		F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
 		F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */; };
 		F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
-		F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */; };
+		F2F81A7C26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */; };
 		F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
 		F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */; };
-		F2F81A8226CCC0300094BC45 /* ProfileUserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8126CCC0300094BC45 /* ProfileUserLoader.swift */; };
+		F2F81A8226CCC0300094BC45 /* RemoteUserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8126CCC0300094BC45 /* RemoteUserLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,10 +50,10 @@
 		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
 		F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapper.swift; sourceTree = "<group>"; };
 		F2F81A7926CCAEEE0094BC45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserLoaderTests.swift; sourceTree = "<group>"; };
+		F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
-		F2F81A8126CCC0300094BC45 /* ProfileUserLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserLoader.swift; sourceTree = "<group>"; };
+		F2F81A8126CCC0300094BC45 /* RemoteUserLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +112,7 @@
 			children = (
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
 				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
-				F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */,
+				F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */,
 				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
 				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
 			);
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */,
-				F2F81A8126CCC0300094BC45 /* ProfileUserLoader.swift */,
+				F2F81A8126CCC0300094BC45 /* RemoteUserLoader.swift */,
 			);
 			path = "Profile User API";
 			sourceTree = "<group>";
@@ -265,7 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */,
-				F2F81A8226CCC0300094BC45 /* ProfileUserLoader.swift in Sources */,
+				F2F81A8226CCC0300094BC45 /* RemoteUserLoader.swift in Sources */,
 				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
 				F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */,
@@ -282,7 +282,7 @@
 				F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */,
 				F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */,
 				F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */,
-				F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */,
+				F2F81A7C26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

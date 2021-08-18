@@ -1,5 +1,5 @@
 //
-//  ProfileUserLoaderTests.swift
+//  LoadUserFromRemoteUseCaseTests.swift
 //  RandomUserTests
 //
 //  Created by Mario Alberto Barragán Espinosa on 17/08/21.
@@ -8,7 +8,7 @@
 import XCTest
 import RandomUser
 
-class ProfileUserLoaderTests: XCTestCase {
+class LoadUserFromRemoteUseCaseTests: XCTestCase {
   func test_init_doesNotRequestURL() {
     let (_, client) = makeSUT()
     
@@ -36,7 +36,7 @@ class ProfileUserLoaderTests: XCTestCase {
   func test_load_deliversInvalidDataErrorOnSuccessfulRespondeWithInvalidData() {
     let (sut, client) = makeSUT()
         
-    expect(sut, completesWith: .failure(ProfileUserLoader.Error.invalidData), when: {
+    expect(sut, completesWith: .failure(RemoteUserLoader.Error.invalidData), when: {
       client.complete(withStatusCode: 200, data: Data("invalid json".utf8))
     })
   }
@@ -73,14 +73,14 @@ class ProfileUserLoaderTests: XCTestCase {
   
   private func makeSUT(with url: URL = URL(string: "http://any-url.com")!, 
                        file: StaticString = #file, 
-                       line: UInt = #line) -> (sut: ProfileUserLoader, client: HTTPClientSpy) {
+                       line: UInt = #line) -> (sut: RemoteUserLoader, client: HTTPClientSpy) {
     let client = HTTPClientSpy()
-    let sut = ProfileUserLoader(url: url, client: client)
+    let sut = RemoteUserLoader(url: url, client: client)
     
     return (sut, client)
   }
   
-  private func expect(_ sut: ProfileUserLoader, completesWith expectedResult: ProfileUserLoader.Result, when action: () -> Void) {
+  private func expect(_ sut: RemoteUserLoader, completesWith expectedResult: RemoteUserLoader.Result, when action: () -> Void) {
     let exp = expectation(description: "Wait for completion")
     
     sut.load { receivedResult in
