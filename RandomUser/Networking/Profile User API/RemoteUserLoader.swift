@@ -7,16 +7,16 @@
 
 import Foundation
 
-public final class RemoteUserLoader {
+public final class RemoteUserLoader: UserLoader {
   private let url: URL
   private let client: HTTPClient
-  
-  public typealias Result = Swift.Result<User, Swift.Error>
   
   public init(url: URL, client: HTTPClient) {
     self.url = url
     self.client = client
   }
+  
+  public typealias Result = UserLoader.Result
   
   public enum Error: Swift.Error {
     case invalidData
