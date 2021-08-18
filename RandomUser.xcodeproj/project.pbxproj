@@ -15,6 +15,7 @@
 		F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */; };
 		F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6726CC80B60094BC45 /* HTTPClient.swift */; };
 		F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
+		F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F2F81A4E26CC7C970094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F81A6726CC80B60094BC45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
+				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
 			);
 			path = RandomUserTests;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 					};
 					F2F81A4726CC7C970094BC45 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1250;
 						TestTargetID = F2F81A3126CC7C940094BC45;
 					};
 				};
@@ -238,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +435,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4ZUPHQCZR;
 				INFOPLIST_FILE = RandomUserTests/Info.plist;
@@ -441,6 +447,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = mario.RandomUserTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomUser.app/RandomUser";
@@ -452,6 +459,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D4ZUPHQCZR;
 				INFOPLIST_FILE = RandomUserTests/Info.plist;
