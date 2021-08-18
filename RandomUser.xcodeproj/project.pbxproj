@@ -16,6 +16,8 @@
 		F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6726CC80B60094BC45 /* HTTPClient.swift */; };
 		F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
 		F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
+		F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */; };
+		F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		F2F81A6726CC80B60094BC45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
+		F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapper.swift; sourceTree = "<group>"; };
+		F2F81A7926CCAEEE0094BC45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 		F2F81A6526CC807E0094BC45 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F2F81A7826CCAED90094BC45 /* Profile User Feature */,
+				F2F81A7526CCAE250094BC45 /* Profile User API */,
 				F2F81A6626CC80870094BC45 /* Shared API */,
 				F2F81A6926CC813E0094BC45 /* Shared API Infra */,
 			);
@@ -127,6 +133,22 @@
 				F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */,
 			);
 			path = "Shared API Infra";
+			sourceTree = "<group>";
+		};
+		F2F81A7526CCAE250094BC45 /* Profile User API */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */,
+			);
+			path = "Profile User API";
+			sourceTree = "<group>";
+		};
+		F2F81A7826CCAED90094BC45 /* Profile User Feature */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A7926CCAEEE0094BC45 /* User.swift */,
+			);
+			path = "Profile User Feature";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +255,10 @@
 				F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */,
 				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
+				F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */,
 				F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */,
 				F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */,
+				F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
