@@ -11,6 +11,7 @@
 		F213B9A926CD603F00AFC69E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F213B9A826CD603F00AFC69E /* SnapshotTesting */; };
 		F213B9AC26CD609D00AFC69E /* ProfileSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9AB26CD609D00AFC69E /* ProfileSnapshotTests.swift */; };
 		F213B9AF26CD60F000AFC69E /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9AE26CD60F000AFC69E /* XCTestCase+Snapshot.swift */; };
+		F213B9B226CD668100AFC69E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9B126CD668100AFC69E /* UIView+Extensions.swift */; };
 		F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3526CC7C940094BC45 /* AppDelegate.swift */; };
 		F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */; };
 		F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3926CC7C940094BC45 /* ProfileViewController.swift */; };
@@ -44,6 +45,7 @@
 		F213B9A526CD5DF500AFC69E /* RemoteUserImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserImageDataLoader.swift; sourceTree = "<group>"; };
 		F213B9AB26CD609D00AFC69E /* ProfileSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSnapshotTests.swift; sourceTree = "<group>"; };
 		F213B9AE26CD60F000AFC69E /* XCTestCase+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Snapshot.swift"; sourceTree = "<group>"; };
+		F213B9B126CD668100AFC69E /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		F2F81A3226CC7C940094BC45 /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F81A3526CC7C940094BC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		F213B9B026CD665300AFC69E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F213B9B126CD668100AFC69E /* UIView+Extensions.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F2F81A2926CC7C940094BC45 = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +135,9 @@
 			isa = PBXGroup;
 			children = (
 				F2F81A6526CC807E0094BC45 /* Networking */,
-				F2F81A3526CC7C940094BC45 /* AppDelegate.swift */,
+				F213B9B026CD665300AFC69E /* View */,
 				F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */,
+				F2F81A3526CC7C940094BC45 /* AppDelegate.swift */,
 				F2F81A3926CC7C940094BC45 /* ProfileViewController.swift */,
 				F2F81A3B26CC7C940094BC45 /* Main.storyboard */,
 				F2F81A3E26CC7C960094BC45 /* Assets.xcassets */,
@@ -309,6 +320,7 @@
 				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
 				F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */,
+				F213B9B226CD668100AFC69E /* UIView+Extensions.swift in Sources */,
 				F2F81A8626CCC6C50094BC45 /* UserImageDataLoader.swift in Sources */,
 				F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */,
 				F2F81A8426CCC1570094BC45 /* UserLoader.swift in Sources */,
