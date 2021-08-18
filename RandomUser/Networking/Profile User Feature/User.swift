@@ -45,9 +45,8 @@ public struct Address: Equatable {
   let country: String
   let latitude: String
   let longitude: String
-  let postcode: String
   
-  public init(streetNumber: Int, streetName: String, city: String, state: String, country: String, latitude: String, longitude: String, postcode: String) {
+  public init(streetNumber: Int, streetName: String, city: String, state: String, country: String, latitude: String, longitude: String) {
     self.streetNumber = streetNumber
     self.streetName = streetName
     self.city = city
@@ -55,6 +54,5 @@ public struct Address: Equatable {
     self.country = country
     self.latitude = latitude
     self.longitude = longitude
-    self.postcode = postcode
   }
 }

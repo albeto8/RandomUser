@@ -9,7 +9,7 @@ import Foundation
 
 public final class ProfileUserMapper {  
   private struct Root: Decodable {
-    private let results: RemoteUser
+    private let results: [RemoteUser]
     
     private struct RemoteUser: Decodable {
       private let gender: String
@@ -41,7 +41,6 @@ public final class ProfileUserMapper {
         let city: String
         let state: String
         let country: String
-        let postcode: String
         let coordinates: RemoteCoordinates
       }
       
@@ -77,13 +76,12 @@ public final class ProfileUserMapper {
                                      state: location.state, 
                                      country: location.country, 
                                      latitude: location.coordinates.latitude, 
-                                     longitude: location.coordinates.longitude, 
-                                     postcode: location.postcode))
+                                     longitude: location.coordinates.longitude))
       }
     }
     
     var dto: User {
-      return results.user
+      return results.first!.user
     }
   }
   

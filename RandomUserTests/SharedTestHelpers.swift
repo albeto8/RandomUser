@@ -86,13 +86,12 @@ func makeUserItem(nameTitle: String,
                                     state: state, 
                                     country: country, 
                                     latitude: latitude, 
-                                    longitude: longitude, 
-                                    postcode: postcode))
+                                    longitude: longitude))
   
   return (model, json)
 }
 
 func makeJSON(_ item: [String: Any]) -> Data {
-  let root = ["results": item]
+  let root = ["results": [item]]
   return try! JSONSerialization.data(withJSONObject: root)
 }
