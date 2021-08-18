@@ -18,16 +18,12 @@ public final class RemoteUserLoader: UserLoader {
   
   public typealias Result = UserLoader.Result
   
-  public enum Error: Swift.Error {
-    case invalidData
-  }
-  
   public func load(completion: @escaping (Result) -> Void) {
     client.get(from: url) { result in
       switch result {
       case .success((let data, _)):
         guard let mappedUser = try? ProfileUserMapper.map(data: data) else {
-          completion(.failure(Error.invalidData))
+          completion(.failure(ProfileUserMapper.Error.invalidData))
           return
         }
         

@@ -36,7 +36,7 @@ class LoadUserFromRemoteUseCaseTests: XCTestCase {
   func test_load_deliversInvalidDataErrorOnSuccessfulRespondeWithInvalidData() {
     let (sut, client) = makeSUT()
         
-    expect(sut, completesWith: .failure(RemoteUserLoader.Error.invalidData), when: {
+    expect(sut, completesWith: .failure(ProfileUserMapper.Error.invalidData), when: {
       client.complete(withStatusCode: 200, data: Data("invalid json".utf8))
     })
   }

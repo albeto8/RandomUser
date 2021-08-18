@@ -7,7 +7,11 @@
 
 import Foundation
 
-public final class ProfileUserMapper {  
+public final class ProfileUserMapper {
+  public enum Error: Swift.Error {
+    case invalidData
+  }
+  
   private struct Root: Decodable {
     private let results: [RemoteUser]
     
@@ -80,15 +84,19 @@ public final class ProfileUserMapper {
       }
     }
     
-    var dto: User {
-      return results.first!.user
+    var toModel: User? {
+      return results.first?.user
     }
   }
   
   public static func map(data: Data) throws -> User {
     do {
       let root = try JSONDecoder().decode(Root.self, from: data)
-      return root.dto
+      guard let mappedUser = root.toModel else {
+        throw Error.invalidData
+      }
+      
+      return mappedUser
       
     } catch {
       throw error
