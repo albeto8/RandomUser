@@ -50,23 +50,11 @@ class ProfileUserLoaderTests: XCTestCase {
   
   func test_load_deliversErrorOnClientError() {
     let (sut, client) = makeSUT()
-    let clientError = NSError(domain: "anyError", code: 0)
-    let exp = expectation(description: "Wait for completion")
+    let clientError = NSError(domain: "clientError", code: 0)
         
-    sut.load { receivedResult in
-      switch receivedResult {
-      case .failure(let error as NSError):
-        XCTAssertEqual(error, clientError)
-        
-      default:
-        XCTFail("Expected result \(clientError) got \(receivedResult) instead")
-      }
-      exp.fulfill()
-    }
-    
-    client.complete(with: clientError)
-    
-    wait(for: [exp], timeout: 0.1)
+    expect(sut, completesWith: clientError, when: {
+      client.complete(with: clientError)
+    })
   }
   
   // MARK: - Helpers
@@ -78,5 +66,24 @@ class ProfileUserLoaderTests: XCTestCase {
     let sut = ProfileUserLoader(url: url, client: client)
     
     return (sut, client)
+  }
+  
+  private func expect(_ sut: ProfileUserLoader, completesWith expectedError: Error, when action: () -> Void) {
+    let exp = expectation(description: "Wait for completion")
+    
+    sut.load { receivedResult in
+      switch receivedResult {
+      case .failure(let error as NSError):
+        XCTAssertEqual(error, expectedError as NSError)
+        
+      default:
+        XCTFail("Expected result \(expectedError) got \(receivedResult) instead")
+      }
+      exp.fulfill()
+    }
+    
+    action()
+    
+    wait(for: [exp], timeout: 0.1)
   }
 }
