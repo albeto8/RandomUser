@@ -13,12 +13,16 @@ struct User: Equatable {
   let lastName: String
   let gender: String
   let email: String
-  let birthDay: String 
+  let birthDay: String
   let age: Int
-  let phone: String 
-  let cellPhone: String 
+  let phone: String
+  let cellPhone: String
   let userPictureURL: URL?
   let registrationDate: String 
+  let address: Address
+}
+
+struct Address: Equatable {
   let streetNumber: Int
   let streetName: String
   let city: String
@@ -89,14 +93,14 @@ final class ProfileUserMapper {
                      cellPhone: cell, 
                      userPictureURL: URL(string: picture.large), 
                      registrationDate: registered.date, 
-                     streetNumber: location.street.number, 
-                     streetName: location.street.name, 
-                     city: location.city, 
-                     state: location.state, 
-                     country: location.country, 
-                     latitude: location.coordinates.latitude, 
-                     longitude: location.coordinates.longitude, 
-                     postcode: location.postcode)
+                     address: Address(streetNumber: location.street.number, 
+                                      streetName: location.street.name, 
+                                      city: location.city, 
+                                      state: location.state, 
+                                      country: location.country, 
+                                      latitude: location.coordinates.latitude, 
+                                      longitude: location.coordinates.longitude, 
+                                      postcode: location.postcode))
       }
     }
     
@@ -223,14 +227,14 @@ class ProfileUserMapperTests: XCTestCase {
                      cellPhone: cellPhone, 
                      userPictureURL: userPictureURL, 
                      registrationDate: registrationDate, 
-                     streetNumber: streetNumber, 
-                     streetName: streetName, 
-                     city: city, 
-                     state: state, 
-                     country: country, 
-                     latitude: latitude, 
-                     longitude: longitude, 
-                     postcode: postcode)
+                     address: Address(streetNumber: streetNumber, 
+                                      streetName: streetName, 
+                                      city: city, 
+                                      state: state, 
+                                      country: country, 
+                                      latitude: latitude, 
+                                      longitude: longitude, 
+                                      postcode: postcode))
         
     return (model, json)
   }
