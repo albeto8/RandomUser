@@ -19,15 +19,23 @@ final class ProfileUserLoader {
     self.client = client
   }
   
+  enum Error: Swift.Error {
+    case invalidData
+  }
+  
   func load(completion: @escaping (Result) -> Void) {
     client.get(from: url) { result in
       switch result {
       case .success((let data, _)):
-        completion(.success(try! ProfileUserMapper.map(data: data)))
+        guard let mappedUser = try? ProfileUserMapper.map(data: data) else {
+          completion(.failure(Error.invalidData))
+          return
+        }
+        
+        completion(.success(mappedUser))
       
       case .failure(let error):
         completion(.failure(error))
-        
       }
     }
   }
@@ -55,6 +63,14 @@ class ProfileUserLoaderTests: XCTestCase {
         
     expect(sut, completesWith: clientError, when: {
       client.complete(with: clientError)
+    })
+  }
+  
+  func test_load_deliversInvalidDataErrorOnSuccessfulRespondeWithInvalidData() {
+    let (sut, client) = makeSUT()
+        
+    expect(sut, completesWith: ProfileUserLoader.Error.invalidData, when: {
+      client.complete(withStatusCode: 200, data: Data("invalid json".utf8))
     })
   }
   
