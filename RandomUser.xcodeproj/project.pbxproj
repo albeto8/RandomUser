@@ -18,6 +18,8 @@
 		F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
 		F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */; };
 		F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
+		F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */; };
+		F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
 		F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapper.swift; sourceTree = "<group>"; };
 		F2F81A7926CCAEEE0094BC45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserLoaderTests.swift; sourceTree = "<group>"; };
+		F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,8 @@
 			children = (
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
 				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
+				F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */,
+				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
 			);
 			path = RandomUserTests;
 			sourceTree = "<group>";
@@ -267,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */,
+				F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */,
+				F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
