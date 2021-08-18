@@ -20,6 +20,7 @@
 		F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
 		F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */; };
 		F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
+		F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		F2F81A7926CCAEEE0094BC45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserLoaderTests.swift; sourceTree = "<group>"; };
 		F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
 				F2F81A7B26CCAFF40094BC45 /* ProfileUserLoaderTests.swift */,
 				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
+				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
 			);
 			path = RandomUserTests;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */,
 				F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */,
 				F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */,
 				F2F81A7C26CCAFF40094BC45 /* ProfileUserLoaderTests.swift in Sources */,
