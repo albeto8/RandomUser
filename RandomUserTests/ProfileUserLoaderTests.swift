@@ -22,11 +22,12 @@ final class ProfileUserLoader {
   func load(completion: @escaping (Result) -> Void) {
     client.get(from: url) { result in
       switch result {
+      case .success((let data, _)):
+        completion(.success(try! ProfileUserMapper.map(data: data)))
+      
       case .failure(let error):
         completion(.failure(error))
         
-      default:
-        break
       }
     }
   }
@@ -57,6 +58,50 @@ class ProfileUserLoaderTests: XCTestCase {
     })
   }
   
+  func test_load_deliversUserOnClientSuccessfulResponse() {
+    let (sut, client) = makeSUT()
+    let userItem = makeUserItem(nameTitle: "Mr", 
+                            firstName: "Maxime", 
+                            lastName: "Anderson", 
+                            gender: "male", 
+                            email: "maxime.anderson@example.com", 
+                            birthDay: "1948-09-15T02:16:45.171Z", 
+                            age: 29, 
+                            phone: "829-826-3101", 
+                            cellPhone: "322-277-6834", 
+                            userPictureURL: URL(string: "http://any-url.com")!, 
+                            registrationDate: "2014-01-13T23:04:59.882Z", 
+                            streetNumber: 12, 
+                            streetName: "Pine Rd", 
+                            city: "Field", 
+                            state: "Newfoundland and Labrador", 
+                            country: "Canada", 
+                            latitude: "-68.1548", 
+                            longitude: "-73.3002", 
+                            postcode: "B9Y 6D8")
+    let json = makeJSON(userItem.json)
+    let exp = expectation(description: "Wait for completion")
+    
+    let expectedUser = userItem.model
+    
+    sut.load { receivedResult in
+      switch receivedResult {
+      case .success(let receivedUser):
+        XCTAssertEqual(expectedUser, receivedUser)
+        
+      default:
+        XCTFail("Expected result \(expectedUser) got \(receivedResult) instead")
+      }
+      
+      exp.fulfill()
+    }
+    
+    
+    client.complete(withStatusCode: 200, data: json)
+    
+    wait(for: [exp], timeout: 0.1)
+  }
+  
   // MARK: - Helpers
   
   private func makeSUT(with url: URL = URL(string: "http://any-url.com")!, 
@@ -79,6 +124,7 @@ class ProfileUserLoaderTests: XCTestCase {
       default:
         XCTFail("Expected result \(expectedError) got \(receivedResult) instead")
       }
+      
       exp.fulfill()
     }
     
