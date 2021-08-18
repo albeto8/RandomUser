@@ -8,39 +8,6 @@
 import XCTest
 import RandomUser
 
-final class ProfileUserLoader {
-  private let url: URL
-  private let client: HTTPClient
-  
-  typealias Result = Swift.Result<User, Swift.Error>
-  
-  init(url: URL, client: HTTPClient) {
-    self.url = url
-    self.client = client
-  }
-  
-  enum Error: Swift.Error {
-    case invalidData
-  }
-  
-  func load(completion: @escaping (Result) -> Void) {
-    client.get(from: url) { result in
-      switch result {
-      case .success((let data, _)):
-        guard let mappedUser = try? ProfileUserMapper.map(data: data) else {
-          completion(.failure(Error.invalidData))
-          return
-        }
-        
-        completion(.success(mappedUser))
-      
-      case .failure(let error):
-        completion(.failure(error))
-      }
-    }
-  }
-}
-
 class ProfileUserLoaderTests: XCTestCase {
   func test_init_doesNotRequestURL() {
     let (_, client) = makeSUT()
