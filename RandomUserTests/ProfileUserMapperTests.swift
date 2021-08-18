@@ -54,53 +54,57 @@ final class ProfileUserMapper {
       }
       
       private struct RemoteDob: Decodable {
-          let date: String
-          let age: Int
+        let date: String
+        let age: Int
       }
       
       private struct RemoteRegistered: Decodable {
-          let date: String
+        let date: String
       }
       
       private struct RemoteLocation: Decodable {
-          let street: RemoteStreet
-          let city, state, country, postcode: String
-          let coordinates: RemoteCoordinates
+        let street: RemoteStreet
+        let city: String
+        let state: String
+        let country: String
+        let postcode: String
+        let coordinates: RemoteCoordinates
       }
-
+      
       private struct RemoteCoordinates: Decodable {
-          let latitude, longitude: String
+        let latitude: String
+        let longitude: String
       }
-
+      
       private struct RemoteStreet: Decodable {
-          let number: Int
-          let name: String
+        let number: Int
+        let name: String
       }
       
       private struct RemotePicture: Decodable {
-          let large: String
+        let large: String
       }
       
       var user: User {
         return User(nameTitle: name.title, 
                     firstName: name.first, 
                     lastName: name.last, 
-                     gender: gender, 
-                     email: email, 
-                     birthDay: dob.date, 
-                     age: dob.age, 
-                     phone: phone, 
-                     cellPhone: cell, 
-                     userPictureURL: URL(string: picture.large), 
-                     registrationDate: registered.date, 
-                     address: Address(streetNumber: location.street.number, 
-                                      streetName: location.street.name, 
-                                      city: location.city, 
-                                      state: location.state, 
-                                      country: location.country, 
-                                      latitude: location.coordinates.latitude, 
-                                      longitude: location.coordinates.longitude, 
-                                      postcode: location.postcode))
+                    gender: gender, 
+                    email: email, 
+                    birthDay: dob.date, 
+                    age: dob.age, 
+                    phone: phone, 
+                    cellPhone: cell, 
+                    userPictureURL: URL(string: picture.large), 
+                    registrationDate: registered.date, 
+                    address: Address(streetNumber: location.street.number, 
+                                     streetName: location.street.name, 
+                                     city: location.city, 
+                                     state: location.state, 
+                                     country: location.country, 
+                                     latitude: location.coordinates.latitude, 
+                                     longitude: location.coordinates.longitude, 
+                                     postcode: location.postcode))
       }
     }
     
@@ -129,24 +133,24 @@ class ProfileUserMapperTests: XCTestCase {
   
   func test_map_deliversUserWithValidJSON() throws {
     let user = makeUserItem(nameTitle: "Mr", 
-                                     firstName: "Maxime", 
-                                     lastName: "Anderson", 
-                                     gender: "male", 
-                                     email: "maxime.anderson@example.com", 
-                                     birthDay: "1948-09-15T02:16:45.171Z", 
-                                     age: 29, 
-                                     phone: "829-826-3101", 
-                                     cellPhone: "322-277-6834", 
-                                     userPictureURL: URL(string: "http://any-url.com")!, 
-                                     registrationDate: "2014-01-13T23:04:59.882Z", 
-                                     streetNumber: 12, 
-                                     streetName: "Pine Rd", 
-                                     city: "Field", 
-                                     state: "Newfoundland and Labrador", 
-                                     country: "Canada", 
-                                     latitude: "-68.1548", 
-                                     longitude: "-73.3002", 
-                                     postcode: "B9Y 6D8")
+                            firstName: "Maxime", 
+                            lastName: "Anderson", 
+                            gender: "male", 
+                            email: "maxime.anderson@example.com", 
+                            birthDay: "1948-09-15T02:16:45.171Z", 
+                            age: 29, 
+                            phone: "829-826-3101", 
+                            cellPhone: "322-277-6834", 
+                            userPictureURL: URL(string: "http://any-url.com")!, 
+                            registrationDate: "2014-01-13T23:04:59.882Z", 
+                            streetNumber: 12, 
+                            streetName: "Pine Rd", 
+                            city: "Field", 
+                            state: "Newfoundland and Labrador", 
+                            country: "Canada", 
+                            latitude: "-68.1548", 
+                            longitude: "-73.3002", 
+                            postcode: "B9Y 6D8")
     
     let result = try ProfileUserMapper.map(data: makeJSON(user.json))
     
@@ -156,24 +160,24 @@ class ProfileUserMapperTests: XCTestCase {
   // MARK: - Helpers
   
   private func makeUserItem(nameTitle: String,
-                                firstName: String, 
-                                lastName: String,
-                                gender: String,
-                                email: String,
-                                birthDay: String,
-                                age: Int,
-                                phone: String,
-                                cellPhone: String,
-                                userPictureURL: URL,
-                                registrationDate: String,
-                                streetNumber: Int,
-                                streetName: String,
-                                city: String,
-                                state: String,
-                                country: String,
-                                latitude: String,
-                                longitude: String,
-                                postcode: String) -> (model: User, json: [String: Any]) {
+                            firstName: String, 
+                            lastName: String,
+                            gender: String,
+                            email: String,
+                            birthDay: String,
+                            age: Int,
+                            phone: String,
+                            cellPhone: String,
+                            userPictureURL: URL,
+                            registrationDate: String,
+                            streetNumber: Int,
+                            streetName: String,
+                            city: String,
+                            state: String,
+                            country: String,
+                            latitude: String,
+                            longitude: String,
+                            postcode: String) -> (model: User, json: [String: Any]) {
     
     let nameJSON = [
       "title": nameTitle,
@@ -235,7 +239,7 @@ class ProfileUserMapperTests: XCTestCase {
                                       latitude: latitude, 
                                       longitude: longitude, 
                                       postcode: postcode))
-        
+    
     return (model, json)
   }
   
