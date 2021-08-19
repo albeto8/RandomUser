@@ -17,7 +17,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let client = URLSessionHTTPClient(session: .shared)
     let loader = RemoteUserLoader(url: URL(string: "https://randomuser.me/api/")!, client: client)
     
-    let controller = ProfileUIComposer.controllerWith(userLoader: loader)
+    let imageLoader = RemoteUserImageDataLoader(client: client)
+    
+    let controller = ProfileUIComposer.controllerWith(userLoader: loader, 
+                                                      imageLoader: imageLoader)
     
     window = UIWindow(windowScene: scene)
     window?.rootViewController = controller

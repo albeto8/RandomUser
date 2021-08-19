@@ -29,7 +29,7 @@ final class ProfileViewController: UIViewController {
     view = currentView
   }
   
-  public func display(_ userInfoViewModel: UserInfoViewModel) {
+  public func display(_ userInfoViewModel: UserInfoViewModel<UIImage>) {
     currentView.configure(viewModel: userInfoViewModel)
   }
 }

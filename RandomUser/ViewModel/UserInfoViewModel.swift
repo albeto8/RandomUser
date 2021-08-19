@@ -15,23 +15,34 @@ extension Date {
     }
 }
 
-final class UserInfoViewModel {
-  private let user: User
+final class UserInfoViewModel<Image> {
+  typealias Observer<T> = (T) -> Void
   
-  init(user: User) {
-    self.user = user
+  private let model: User
+  private let imageLoader: UserImageDataLoader
+  private let imageTransformer: (Data) -> Image?
+  
+  var onImageLoad: Observer<Image>?
+  var onImageLoadingStateChange: Observer<Bool>?
+  
+  init(user: User, 
+       imageLoader: UserImageDataLoader, 
+       imageTransformer: @escaping (Data) -> Image?) {
+    self.model = user
+    self.imageLoader = imageLoader
+    self.imageTransformer = imageTransformer
   }
   
   var fullname: String {
-    "\(user.nameTitle). \(user.firstName) \(user.lastName)"
+    "\(model.nameTitle). \(model.firstName) \(model.lastName)"
   }
   
   var email: String {
-    "\(user.email)"
+    "\(model.email)"
   }
   
   var memberSince: String {
-    let isoDate = user.registrationDate
+    let isoDate = model.registrationDate
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US_POSIX")
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -45,11 +56,11 @@ final class UserInfoViewModel {
   }
   
   var age: String {
-    "\(user.age) Years"
+    "\(model.age) Years"
   }
   
   var birthday: String {
-    let isoDate = user.birthDay
+    let isoDate = model.birthDay
     let dateFormatter = DateFormatter()
     dateFormatter.locale = Locale(identifier: "en_US_POSIX")
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -63,14 +74,36 @@ final class UserInfoViewModel {
   }
   
   var gender: String {
-    "\(user.gender)"
+    "\(model.gender)"
   }
   
   var emergencyPhone: String {
-    "\(user.phone)"
+    "\(model.phone)"
   }
   
   var address: String {
-    "\(user.address.streetNumber) \(user.address.streetName), \(user.address.city), \(user.address.state), \(user.address.country)"
+    "\(model.address.streetNumber) \(model.address.streetName), \(model.address.city), \(model.address.state), \(model.address.country)"
+  }
+  
+  func loadImageData() {
+    guard let userPictureURL = model.userPictureURL else {
+      //TODO Handle sad path for invalid URL
+      return
+    }
+    
+    onImageLoadingStateChange?(true)
+    
+    _ = imageLoader.loadImageData(from: userPictureURL) { [weak self] result in
+      self?.handle(result)
+    }
+  }
+  
+  private func handle(_ result: UserImageDataLoader.Result) {
+    if let image = (try? result.get()).flatMap(imageTransformer) {
+      onImageLoad?(image)
+    } else {
+      //TODO Handle sad path for invalid image
+    }
+    onImageLoadingStateChange?(false)
   }
 }

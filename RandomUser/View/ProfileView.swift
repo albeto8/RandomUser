@@ -168,7 +168,7 @@ final class ProfileView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
   
-  func configure(viewModel: UserInfoViewModel) {
+  func configure(viewModel: UserInfoViewModel<UIImage>) {
     nameLabel.text = viewModel.fullname
     emailLabel.text = viewModel.email
     memberSinceLabel.text = viewModel.memberSince
@@ -177,6 +177,10 @@ final class ProfileView: UIView {
     genderValueLabel.text = viewModel.gender
     phoneButton.setTitle(viewModel.emergencyPhone, for: .normal)
     addressValueLabel.text = viewModel.address
+  }
+  
+  func configureImage(image: UIImage) {
+    phoneButton.setImage(image, for: .normal)
   }
   
   private func setUpView() {
