@@ -16,6 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     let controller = ProfileViewController()
     
+    let client = URLSessionHTTPClient(session: .shared)
+    let loader = RemoteUserLoader(url: URL(string: "https://randomuser.me/api/")!, client: client)
+    loader.load { result in
+      print("result: \(result)")
+    }
+    
     window = UIWindow(windowScene: scene)
     window?.rootViewController = controller
     window?.makeKeyAndVisible()

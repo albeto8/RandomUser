@@ -26,6 +26,7 @@ final class ProfileViewController: UIViewController {
     let label = UILabel()
     label.text = "Mr. Sam Anderson"
     label.font = .preferredFont(forTextStyle: .title1)
+    label.textColor = UIColor(named: "TextLabel")!
     label.textAlignment = .center
     label.numberOfLines = 1
     
@@ -37,6 +38,7 @@ final class ProfileViewController: UIViewController {
     label.text = "maxime.anderson@example.com"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -47,6 +49,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Member since 2012"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -57,6 +60,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Age"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -67,6 +71,7 @@ final class ProfileViewController: UIViewController {
     label.text = "29 Years"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -77,6 +82,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Birthday"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -87,6 +93,7 @@ final class ProfileViewController: UIViewController {
     label.text = "12/30"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -97,6 +104,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Gender"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -107,6 +115,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Female"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -117,6 +126,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Emergency Contact"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -141,6 +151,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Address"
     label.textAlignment = .left
     label.font = .preferredFont(forTextStyle: .headline)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 1
     
     return label
@@ -151,6 +162,7 @@ final class ProfileViewController: UIViewController {
     label.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor"
     label.textAlignment = .justified
     label.font = .preferredFont(forTextStyle: .body)
+    label.textColor = UIColor(named: "TextLabel")!
     label.numberOfLines = 0
     
     return label
