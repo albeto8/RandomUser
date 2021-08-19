@@ -18,6 +18,7 @@ extension Date {
 final class UserInfoViewModel<Image> {
   typealias Observer<T> = (T) -> Void
   
+  private var task: UserImageDataLoaderTask?
   private let model: User
   private let imageLoader: UserImageDataLoader
   private let imageTransformer: (Data) -> Image?
@@ -93,7 +94,7 @@ final class UserInfoViewModel<Image> {
     
     onImageLoadingStateChange?(true)
     
-    _ = imageLoader.loadImageData(from: userPictureURL) { [weak self] result in
+    task = imageLoader.loadImageData(from: userPictureURL) { [weak self] result in
       self?.handle(result)
     }
   }

@@ -10,6 +10,7 @@ import UIKit
 final class ProfileViewController: UIViewController {
   private let currentView = ProfileView()
   private let profileViewModel: ProfileViewModel
+  var userInfoViewModel: UserInfoViewModel<UIImage>?
   
   init(profileViewModel: ProfileViewModel) {
     self.profileViewModel = profileViewModel
@@ -31,6 +32,12 @@ final class ProfileViewController: UIViewController {
   
   public func display(_ userInfoViewModel: UserInfoViewModel<UIImage>) {
     currentView.configure(viewModel: userInfoViewModel)
+    self.userInfoViewModel = userInfoViewModel
+    userInfoViewModel.loadImageData()
+  }
+  
+  func display(userImage: UIImage) {
+    currentView.configureUserImage(image: userImage)
   }
 }
 

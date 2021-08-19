@@ -17,10 +17,13 @@ final class ProfileUIComposer {
     
     profileViewModel.onFetch = { user in
       let userInfoViewModel = UserInfoViewModel<UIImage>(user: user, 
-                                                         imageLoader: imageLoader,
+                                                         imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader),
                                                          imageTransformer: UIImage.init)
       controller.display(userInfoViewModel)
-      
+            
+      userInfoViewModel.onImageLoad = { image in
+        controller.display(userImage: image)
+      }
       
     }
     

@@ -10,8 +10,6 @@ import UIKit
 final class ProfileView: UIView {
   private lazy var profileImageView: UIImageView = {
     let imageView = UIImageView()
-    let image = UIImage(named: "randomUser1")
-    imageView.image = image
     imageView.setDimensions(width: 100, height: 100)
     imageView.clipsToBounds = true
     imageView.layer.cornerRadius = 50
@@ -179,8 +177,8 @@ final class ProfileView: UIView {
     addressValueLabel.text = viewModel.address
   }
   
-  func configureImage(image: UIImage) {
-    phoneButton.setImage(image, for: .normal)
+  func configureUserImage(image: UIImage) {
+    profileImageView.image = image
   }
   
   private func setUpView() {
