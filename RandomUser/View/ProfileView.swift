@@ -1,14 +1,13 @@
 //
-//  ProfileViewController.swift
+//  ProfileView.swift
 //  RandomUser
 //
-//  Created by Mario Alberto Barragán Espinosa on 17/08/21.
+//  Created by Mario Alberto Barragán Espinosa on 18/08/21.
 //
 
 import UIKit
 
-final class ProfileViewController: UIViewController {
-  
+final class ProfileView: UIView {
   private lazy var profileImageView: UIImageView = {
     let imageView = UIImageView()
     let image = UIImage(named: "randomUser1")
@@ -142,7 +141,7 @@ final class ProfileViewController: UIViewController {
     button.clipsToBounds = true
     button.layer.cornerRadius = 5
     button.setDimensions(width: 100, height: 60)
-
+    
     return button
   }()
   
@@ -167,58 +166,61 @@ final class ProfileViewController: UIViewController {
     
     return label
   }()
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     setUpView()
-    view.backgroundColor = UIColor(named: "MainColor")
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
   
   private func setUpView() {
-    view.addSubview(profileImageView)
-    view.addSubview(addressTitleLabel)
-    view.addSubview(addressValueLabel)
+    addSubview(profileImageView)
+    addSubview(addressTitleLabel)
+    addSubview(addressValueLabel)
     
     let userDataStack = makeUserDataStack()
-    view.addSubview(userDataStack)
+    addSubview(userDataStack)
     
     let attributesStack = makeUserAttributesStack()
-    view.addSubview(attributesStack)
+    addSubview(attributesStack)
     
     let emergencyContactStack = makeEmergencyContactStack()
-    view.addSubview(emergencyContactStack)
+    addSubview(emergencyContactStack)
     
-    profileImageView.anchor(top: view.topAnchor, paddingTop: 16)
-    profileImageView.centerX(inView: view)
+    profileImageView.anchor(top: topAnchor, paddingTop: 16)
+    profileImageView.centerX(inView: self)
     
     userDataStack.anchor(top: profileImageView.bottomAnchor, 
                          paddingTop: 8, 
-                         left: view.leadingAnchor, 
-                         right: view.trailingAnchor)
+                         left: leadingAnchor, 
+                         right: trailingAnchor)
     
     attributesStack.anchor(top: userDataStack.bottomAnchor, 
                            paddingTop: 16, 
-                           left: view.leadingAnchor, 
-                           right: view.trailingAnchor)
+                           left: leadingAnchor, 
+                           right: trailingAnchor)
     
     emergencyContactStack.anchor(top: attributesStack.bottomAnchor, 
-                           paddingTop: 16, 
-                           left: view.leadingAnchor,
-                           paddingLeft: 50,
-                           right: view.trailingAnchor,
-                           paddingRight: 50)
+                                 paddingTop: 16, 
+                                 left: leadingAnchor,
+                                 paddingLeft: 50,
+                                 right: trailingAnchor,
+                                 paddingRight: 50)
     
     addressTitleLabel.anchor(top: emergencyContactStack.bottomAnchor,
                              paddingTop: 20,
-                             left: view.leadingAnchor,
+                             left: leadingAnchor,
                              paddingLeft: 20,
-                             right: view.trailingAnchor)
+                             right: trailingAnchor)
     
     addressValueLabel.anchor(top: addressTitleLabel.bottomAnchor,
                              paddingTop: 8,
-                             left: view.leadingAnchor,
+                             left: leadingAnchor,
                              paddingLeft: 20,
-                             right: view.trailingAnchor,
+                             right: trailingAnchor,
                              paddingRight: 20)
   }
   
@@ -264,4 +266,3 @@ final class ProfileViewController: UIViewController {
     return stackView
   }
 }
-

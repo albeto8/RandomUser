@@ -14,7 +14,7 @@ class ProfileSnapshotTests: XCTestCase {
     
     sut.loadViewIfNeeded()
     
-    record(sut, mode: .light)
-    record(sut, mode: .dark)
+    assert(sut, mode: .light)
+    assert(sut, mode: .dark)
   }
 }
