@@ -10,13 +10,18 @@ import XCTest
 
 class ProfileSnapshotTests: XCTestCase {
   func test_profileWithContent() {
-    let sut = ProfileViewController()
+    let profileViewModel = ProfileViewModel(loader: UserLoaderDummy())
+    let sut = ProfileViewController(profileViewModel: profileViewModel)
     
     sut.loadViewIfNeeded()
     sut.display(UserInfoViewModel.prototype)
     
     assert(sut, mode: .light)
     assert(sut, mode: .dark)
+  }
+  
+  private class UserLoaderDummy: UserLoader {
+    func load(completion: @escaping (UserLoader.Result) -> Void) {}
   }
 }
 

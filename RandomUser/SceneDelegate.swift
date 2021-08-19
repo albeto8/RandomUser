@@ -14,13 +14,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     guard let scene = (scene as? UIWindowScene) else { return }
     
-    let controller = ProfileViewController()
-    
     let client = URLSessionHTTPClient(session: .shared)
     let loader = RemoteUserLoader(url: URL(string: "https://randomuser.me/api/")!, client: client)
-    loader.load { result in
-      print("result: \(result)")
-    }
+    
+    let controller = ProfileUIComposer.controllerWith(userLoader: loader)
     
     window = UIWindow(windowScene: scene)
     window?.rootViewController = controller

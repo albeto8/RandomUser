@@ -180,6 +180,8 @@ final class ProfileView: UIView {
   }
   
   private func setUpView() {
+    backgroundColor = UIColor(named: "MainColor")
+    
     addSubview(profileImageView)
     addSubview(addressTitleLabel)
     addSubview(addressValueLabel)

@@ -8,12 +8,20 @@
 import UIKit
 
 final class ProfileViewController: UIViewController {
-  
   private let currentView = ProfileView()
-    
+  private let profileViewModel: ProfileViewModel
+  
+  init(profileViewModel: ProfileViewModel) {
+    self.profileViewModel = profileViewModel
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor(named: "MainColor")
   }
   
   override func loadView() {
