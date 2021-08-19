@@ -147,6 +147,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F241497826CEC50F00FCE288 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		F2F81A2926CC7C940094BC45 = {
 			isa = PBXGroup;
 			children = (
@@ -172,13 +180,13 @@
 				F213B9B826CDDCB200AFC69E /* ViewModel */,
 				F213B9B326CDDA1F00AFC69E /* Controller */,
 				F213B9B026CD665300AFC69E /* View */,
+				F241497826CEC50F00FCE288 /* Composers */,
 				F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */,
 				F2F81A3526CC7C940094BC45 /* AppDelegate.swift */,
 				F2F81A3B26CC7C940094BC45 /* Main.storyboard */,
 				F2F81A3E26CC7C960094BC45 /* Assets.xcassets */,
 				F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */,
 				F2F81A4326CC7C960094BC45 /* Info.plist */,
-				F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */,
 			);
 			path = RandomUser;
 			sourceTree = "<group>";
