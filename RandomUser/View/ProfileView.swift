@@ -23,7 +23,6 @@ final class ProfileView: UIView {
   
   private lazy var nameLabel: UILabel = {
     let label = UILabel()
-    label.text = "Mr. Sam Anderson"
     label.font = .preferredFont(forTextStyle: .title1)
     label.textColor = UIColor(named: "TextLabel")!
     label.textAlignment = .center
@@ -34,7 +33,6 @@ final class ProfileView: UIView {
   
   private lazy var emailLabel: UILabel = {
     let label = UILabel()
-    label.text = "maxime.anderson@example.com"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
     label.textColor = UIColor(named: "TextLabel")!
@@ -45,7 +43,6 @@ final class ProfileView: UIView {
   
   private lazy var memberSinceLabel: UILabel = {
     let label = UILabel()
-    label.text = "Member since 2012"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
     label.textColor = UIColor(named: "TextLabel")!
@@ -67,7 +64,6 @@ final class ProfileView: UIView {
   
   private lazy var ageValueLabel: UILabel = {
     let label = UILabel()
-    label.text = "29 Years"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
     label.textColor = UIColor(named: "TextLabel")!
@@ -89,7 +85,6 @@ final class ProfileView: UIView {
   
   private lazy var birthdayValueLabel: UILabel = {
     let label = UILabel()
-    label.text = "12/30"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
     label.textColor = UIColor(named: "TextLabel")!
@@ -111,7 +106,6 @@ final class ProfileView: UIView {
   
   private lazy var genderValueLabel: UILabel = {
     let label = UILabel()
-    label.text = "Female"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
     label.textColor = UIColor(named: "TextLabel")!
@@ -137,7 +131,6 @@ final class ProfileView: UIView {
     button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
     button.setTitleColor(.white, for: .normal)
     button.backgroundColor = UIColor(named: "GreenButtonColor")
-    button.setTitle("829-826-3101", for: .normal)
     button.clipsToBounds = true
     button.layer.cornerRadius = 5
     button.setDimensions(width: 100, height: 60)
@@ -158,7 +151,6 @@ final class ProfileView: UIView {
   
   private lazy var addressValueLabel: UILabel = {
     let label = UILabel()
-    label.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor"
     label.textAlignment = .justified
     label.font = .preferredFont(forTextStyle: .body)
     label.textColor = UIColor(named: "TextLabel")!
@@ -174,6 +166,17 @@ final class ProfileView: UIView {
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  func configure(viewModel: UserInfoViewModel) {
+    nameLabel.text = viewModel.fullname
+    emailLabel.text = viewModel.email
+    memberSinceLabel.text = viewModel.memberSince
+    ageValueLabel.text = viewModel.age
+    birthdayValueLabel.text = viewModel.birthday
+    genderValueLabel.text = viewModel.gender
+    phoneButton.setTitle(viewModel.emergencyPhone, for: .normal)
+    addressValueLabel.text = viewModel.address
   }
   
   private func setUpView() {
