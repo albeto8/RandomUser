@@ -22,6 +22,7 @@ final class ProfileViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    profileViewModel.fetch()
   }
   
   override func loadView() {

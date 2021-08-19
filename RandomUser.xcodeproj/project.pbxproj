@@ -16,6 +16,7 @@
 		F213B9BA26CDDCBE00AFC69E /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9B926CDDCBE00AFC69E /* UserInfoViewModel.swift */; };
 		F241497526CEC0CB00FCE288 /* ProfileUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */; };
 		F241497726CEC4A300FCE288 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497626CEC4A300FCE288 /* ProfileViewModel.swift */; };
+		F241497A26CEC6F000FCE288 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */; };
 		F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3526CC7C940094BC45 /* AppDelegate.swift */; };
 		F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */; };
 		F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3926CC7C940094BC45 /* ProfileViewController.swift */; };
@@ -54,6 +55,7 @@
 		F213B9B926CDDCBE00AFC69E /* UserInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewModel.swift; sourceTree = "<group>"; };
 		F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIComposer.swift; sourceTree = "<group>"; };
 		F241497626CEC4A300FCE288 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		F2F81A3226CC7C940094BC45 /* RandomUser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomUser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2F81A3526CC7C940094BC45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				F2F81A3E26CC7C960094BC45 /* Assets.xcassets */,
 				F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */,
 				F2F81A4326CC7C960094BC45 /* Info.plist */,
+				F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = RandomUser;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */,
 				F2F81A8226CCC0300094BC45 /* RemoteUserLoader.swift in Sources */,
 				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
+				F241497A26CEC6F000FCE288 /* MainQueueDispatchDecorator.swift in Sources */,
 				F241497526CEC0CB00FCE288 /* ProfileUIComposer.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
 				F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */,
