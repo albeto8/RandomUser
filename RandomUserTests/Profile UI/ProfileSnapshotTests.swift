@@ -13,7 +13,11 @@ class ProfileSnapshotTests: XCTestCase {
   func test_profileWithContent() {
     let sut = makeSUT()
     
-    sut.display(userImage: UIImage(named: "randomUser1")!)
+    sut.display(UserInfoViewModel<UIImage>(user: User.prototypeUser, 
+                                           imageLoader: UserImageDataLoaderDummy(),
+                                           imageTransformer: UIImage.init))
+    
+    sut.display(userImage: UIImage(named: "randomUser1", in: Bundle(for: ProfileViewController.self), with: nil)!)
         
     assert(sut, mode: .light)
     assert(sut, mode: .dark)

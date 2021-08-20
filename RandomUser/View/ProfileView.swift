@@ -8,6 +8,19 @@
 import UIKit
 
 final class ProfileView: UIView {
+  
+  let textLabelColor = UIColor(named: "TextLabel", 
+                               in: Bundle(for: ProfileView.self), 
+                               compatibleWith: nil)!
+  
+  let mainColor = UIColor(named: "MainColor", 
+                          in: Bundle(for: ProfileView.self), 
+                          compatibleWith: nil)!
+  
+  let greenButtonColor = UIColor(named: "GreenButtonColor", 
+                          in: Bundle(for: ProfileView.self), 
+                          compatibleWith: nil)!
+  
   private lazy var profileImageView: UIImageView = {
     let imageView = UIImageView()
     imageView.setDimensions(width: 100, height: 100)
@@ -22,7 +35,7 @@ final class ProfileView: UIView {
   private lazy var nameLabel: UILabel = {
     let label = UILabel()
     label.font = .preferredFont(forTextStyle: .title1)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.textAlignment = .center
     label.numberOfLines = 1
     
@@ -33,7 +46,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -43,7 +56,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -54,7 +67,7 @@ final class ProfileView: UIView {
     label.text = "Age"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -64,7 +77,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -75,7 +88,7 @@ final class ProfileView: UIView {
     label.text = "Birthday"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -85,7 +98,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -96,7 +109,7 @@ final class ProfileView: UIView {
     label.text = "Gender"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -106,7 +119,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .subheadline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -117,7 +130,7 @@ final class ProfileView: UIView {
     label.text = "Emergency Contact"
     label.textAlignment = .center
     label.font = .preferredFont(forTextStyle: .headline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -128,7 +141,7 @@ final class ProfileView: UIView {
     button.setTitleColor(.label, for: .normal)
     button.titleLabel?.font = .preferredFont(forTextStyle: .headline)
     button.setTitleColor(.white, for: .normal)
-    button.backgroundColor = UIColor(named: "GreenButtonColor")
+    button.backgroundColor = greenButtonColor
     button.clipsToBounds = true
     button.layer.cornerRadius = 5
     button.setDimensions(width: 100, height: 60)
@@ -141,7 +154,7 @@ final class ProfileView: UIView {
     label.text = "Address"
     label.textAlignment = .left
     label.font = .preferredFont(forTextStyle: .headline)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 1
     
     return label
@@ -151,7 +164,7 @@ final class ProfileView: UIView {
     let label = UILabel()
     label.textAlignment = .justified
     label.font = .preferredFont(forTextStyle: .body)
-    label.textColor = UIColor(named: "TextLabel")!
+    label.textColor = textLabelColor
     label.numberOfLines = 0
     
     return label
@@ -182,7 +195,7 @@ final class ProfileView: UIView {
   }
   
   private func setUpView() {
-    backgroundColor = UIColor(named: "MainColor")
+    backgroundColor = mainColor
     
     addSubview(profileImageView)
     addSubview(addressTitleLabel)
