@@ -144,7 +144,6 @@ final class ProfileView: UIView {
     button.backgroundColor = greenButtonColor
     button.clipsToBounds = true
     button.layer.cornerRadius = 5
-    button.setDimensions(width: 100, height: 60)
     
     return button
   }()
@@ -272,7 +271,7 @@ final class ProfileView: UIView {
   private func makeEmergencyContactStack() -> UIStackView {
     let stackView = makeVerticalStack(subviews: [emergencyContactLabel, 
                                                 phoneButton])
-    
+    phoneButton.anchor(height: 60)
     
     return stackView
   }
