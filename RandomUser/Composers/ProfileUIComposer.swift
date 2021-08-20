@@ -22,6 +22,7 @@ final class ProfileUIComposer {
                                                          imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader),
                                                          imageTransformer: UIImage.init)
       controller.display(userInfoViewModel)
+      controller.loadUserImage()
             
       userInfoViewModel.onImageLoad = { image in
         controller.display(userImage: image)
