@@ -8,16 +8,16 @@
 import Foundation
 import UserFeature
 
-final class ProfileViewModel {
+public final class ProfileViewModel {
   private let loader: UserLoader
   
-  init(loader: UserLoader) {
+  public init(loader: UserLoader) {
     self.loader = loader
   }
   
-  var onFetch: ((User) -> Void)?
+  public var onFetch: ((User) -> Void)?
   
-  func fetch() {
+  public func fetch() {
     loader.load { [weak self] result in
       guard let self = self else { return }
       

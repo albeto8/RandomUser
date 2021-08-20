@@ -16,18 +16,18 @@ extension Date {
     }
 }
 
-final class UserInfoViewModel<Image> {
-  typealias Observer<T> = (T) -> Void
+public final class UserInfoViewModel<Image> {
+  public typealias Observer<T> = (T) -> Void
   
   private var task: UserImageDataLoaderTask?
   private let model: User
   private let imageLoader: UserImageDataLoader
   private let imageTransformer: (Data) -> Image?
   
-  var onImageLoad: Observer<Image>?
+  public var onImageLoad: Observer<Image>?
   var onImageLoadingStateChange: Observer<Bool>?
   
-  init(user: User, 
+  public init(user: User, 
        imageLoader: UserImageDataLoader, 
        imageTransformer: @escaping (Data) -> Image?) {
     self.model = user

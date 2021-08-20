@@ -6,8 +6,8 @@
 //
 
 import XCTest
-@testable import RandomUser
-import UserFeature
+@testable import RandomUseriOS
+@testable import UserFeature
 
 class ProfileSnapshotTests: XCTestCase {
   func test_profileWithContent() {
@@ -22,7 +22,8 @@ class ProfileSnapshotTests: XCTestCase {
   // MARK: - Helpers
   
   private func makeSUT(file: StaticString = #file, line: UInt = #line) -> ProfileViewController {
-    let sut = ProfileUIComposer.controllerWith(userLoader: UserLoaderDummy(), imageLoader: UserImageDataLoaderDummy())
+    let profileViewModel = ProfileViewModel(loader: UserLoaderDummy())
+    let sut = ProfileViewController(profileViewModel: profileViewModel)
     
     sut.loadViewIfNeeded()
     

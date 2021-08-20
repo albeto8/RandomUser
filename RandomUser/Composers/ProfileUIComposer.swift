@@ -7,6 +7,7 @@
 
 import UIKit
 import UserFeature
+import RandomUseriOS
 
 final class ProfileUIComposer {
   private init() {}
