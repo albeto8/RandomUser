@@ -41,6 +41,7 @@
 		F22E048C26D002710082867F /* UserFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F241497526CEC0CB00FCE288 /* ProfileUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */; };
 		F241497A26CEC6F000FCE288 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */; };
+		F296FE2026D07005001EE169 /* UserFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; platformFilter = ios; };
 		F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3526CC7C940094BC45 /* AppDelegate.swift */; };
 		F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A3726CC7C940094BC45 /* SceneDelegate.swift */; };
 		F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */; };
@@ -69,6 +70,13 @@
 			remoteInfo = UserFeature;
 		};
 		F22E048D26D002710082867F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F22E046226D0013B0082867F;
+			remoteInfo = UserFeature;
+		};
+		F296FE2226D07005001EE169 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
 			proxyType = 1;
@@ -139,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F296FE2026D07005001EE169 /* UserFeature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +430,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				F296FE2326D07005001EE169 /* PBXTargetDependency */,
 			);
 			name = RandomUseriOS;
 			productName = RandomUseriOS;
@@ -679,6 +689,12 @@
 			isa = PBXTargetDependency;
 			target = F22E046226D0013B0082867F /* UserFeature */;
 			targetProxy = F22E048D26D002710082867F /* PBXContainerItemProxy */;
+		};
+		F296FE2326D07005001EE169 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = F22E046226D0013B0082867F /* UserFeature */;
+			targetProxy = F296FE2226D07005001EE169 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
