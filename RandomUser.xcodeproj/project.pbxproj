@@ -287,10 +287,9 @@
 		F22E046F26D0013B0082867F /* UserFeatureTests */ = {
 			isa = PBXGroup;
 			children = (
+				F296FE2526D0719B001EE169 /* Helpers */,
 				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
 				F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */,
-				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
-				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
 				F22E047226D0013B0082867F /* Info.plist */,
 			);
 			path = UserFeatureTests;
@@ -310,6 +309,15 @@
 				F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		F296FE2526D0719B001EE169 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
+				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F2F81A2926CC7C940094BC45 = {
