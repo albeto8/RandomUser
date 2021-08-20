@@ -243,10 +243,10 @@
 		F2F81A2926CC7C940094BC45 = {
 			isa = PBXGroup;
 			children = (
-				F2F81A3426CC7C940094BC45 /* RandomUser */,
-				F2F81A4B26CC7C970094BC45 /* RandomUserTests */,
 				F22E046426D0013B0082867F /* UserFeature */,
+				F2F81A3426CC7C940094BC45 /* RandomUser */,
 				F22E046F26D0013B0082867F /* UserFeatureTests */,
+				F2F81A4B26CC7C970094BC45 /* RandomUserTests */,
 				F2F81A3326CC7C940094BC45 /* Products */,
 				F22E048A26D002710082867F /* Frameworks */,
 			);
