@@ -11,7 +11,7 @@ public final class ProfileViewController: UIViewController {
   private let currentView = ProfileView()
   private let profileViewModel: ProfileViewModel
   
-  var userInfoViewModel: UserInfoViewModel<UIImage>? {
+  private var userInfoViewModel: UserInfoViewModel<UIImage>? {
     didSet { configureView() }
   }
   
