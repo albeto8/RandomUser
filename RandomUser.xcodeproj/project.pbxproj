@@ -286,6 +286,7 @@
 		F241497826CEC50F00FCE288 /* Composers */ = {
 			isa = PBXGroup;
 			children = (
+				F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */,
 				F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */,
 			);
 			path = Composers;
@@ -324,7 +325,6 @@
 				F2F81A3526CC7C940094BC45 /* AppDelegate.swift */,
 				F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */,
 				F2F81A4326CC7C960094BC45 /* Info.plist */,
-				F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */,
 				F2F81A3E26CC7C960094BC45 /* Assets.xcassets */,
 			);
 			path = RandomUser;
