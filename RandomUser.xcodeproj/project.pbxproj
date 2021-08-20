@@ -74,13 +74,6 @@
 			remoteGlobalIDString = F22E046226D0013B0082867F;
 			remoteInfo = UserFeature;
 		};
-		F2F81A4926CC7C970094BC45 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2F81A3126CC7C940094BC45;
-			remoteInfo = RandomUser;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -126,8 +119,6 @@
 		F2F81A3E26CC7C960094BC45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F2F81A4126CC7C960094BC45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F2F81A4326CC7C960094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2F81A4E26CC7C970094BC45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F2F81A6726CC80B60094BC45 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
@@ -179,13 +170,6 @@
 			files = (
 				F226134926D0161300AF55B4 /* RandomUseriOS.framework in Frameworks */,
 				F22E048B26D002710082867F /* UserFeature.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F81A4526CC7C970094BC45 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +299,6 @@
 				F2F81A3426CC7C940094BC45 /* RandomUser */,
 				F22E046F26D0013B0082867F /* UserFeatureTests */,
 				F226133726D014E800AF55B4 /* RandomUseriOSTests */,
-				F2F81A4B26CC7C970094BC45 /* RandomUserTests */,
 				F2F81A3326CC7C940094BC45 /* Products */,
 				F22E048A26D002710082867F /* Frameworks */,
 			);
@@ -325,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				F2F81A3226CC7C940094BC45 /* RandomUser.app */,
-				F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */,
 				F22E046326D0013B0082867F /* UserFeature.framework */,
 				F22E046B26D0013B0082867F /* UserFeatureTests.xctest */,
 				F226132B26D014E800AF55B4 /* RandomUseriOS.framework */,
@@ -346,14 +328,6 @@
 				F2F81A3E26CC7C960094BC45 /* Assets.xcassets */,
 			);
 			path = RandomUser;
-			sourceTree = "<group>";
-		};
-		F2F81A4B26CC7C970094BC45 /* RandomUserTests */ = {
-			isa = PBXGroup;
-			children = (
-				F2F81A4E26CC7C970094BC45 /* Info.plist */,
-			);
-			path = RandomUserTests;
 			sourceTree = "<group>";
 		};
 		F2F81A6526CC807E0094BC45 /* Networking */ = {
@@ -519,26 +493,6 @@
 			productReference = F2F81A3226CC7C940094BC45 /* RandomUser.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F2F81A4726CC7C970094BC45 /* RandomUserTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2F81A5F26CC7C970094BC45 /* Build configuration list for PBXNativeTarget "RandomUserTests" */;
-			buildPhases = (
-				F2F81A4426CC7C970094BC45 /* Sources */,
-				F2F81A4526CC7C970094BC45 /* Frameworks */,
-				F2F81A4626CC7C970094BC45 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2F81A4A26CC7C970094BC45 /* PBXTargetDependency */,
-			);
-			name = RandomUserTests;
-			packageProductDependencies = (
-			);
-			productName = RandomUserTests;
-			productReference = F2F81A4826CC7C970094BC45 /* RandomUserTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -563,11 +517,6 @@
 					F2F81A3126CC7C940094BC45 = {
 						CreatedOnToolsVersion = 12.5.1;
 					};
-					F2F81A4726CC7C970094BC45 = {
-						CreatedOnToolsVersion = 12.5.1;
-						LastSwiftMigration = 1250;
-						TestTargetID = F2F81A3126CC7C940094BC45;
-					};
 				};
 			};
 			buildConfigurationList = F2F81A2D26CC7C940094BC45 /* Build configuration list for PBXProject "RandomUser" */;
@@ -587,7 +536,6 @@
 			projectRoot = "";
 			targets = (
 				F2F81A3126CC7C940094BC45 /* RandomUser */,
-				F2F81A4726CC7C970094BC45 /* RandomUserTests */,
 				F22E046226D0013B0082867F /* UserFeature */,
 				F22E046A26D0013B0082867F /* UserFeatureTests */,
 				F226132A26D014E800AF55B4 /* RandomUseriOS */,
@@ -633,13 +581,6 @@
 			files = (
 				F226135326D01B1D00AF55B4 /* Assets.xcassets in Resources */,
 				F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2F81A4626CC7C970094BC45 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,13 +645,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2F81A4426CC7C970094BC45 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -733,11 +667,6 @@
 			isa = PBXTargetDependency;
 			target = F22E046226D0013B0082867F /* UserFeature */;
 			targetProxy = F22E048D26D002710082867F /* PBXContainerItemProxy */;
-		};
-		F2F81A4A26CC7C970094BC45 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2F81A3126CC7C940094BC45 /* RandomUser */;
-			targetProxy = F2F81A4926CC7C970094BC45 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1105,53 +1034,6 @@
 			};
 			name = Release;
 		};
-		F2F81A6026CC7C970094BC45 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4ZUPHQCZR;
-				INFOPLIST_FILE = RandomUserTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mario.RandomUserTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomUser.app/RandomUser";
-			};
-			name = Debug;
-		};
-		F2F81A6126CC7C970094BC45 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D4ZUPHQCZR;
-				INFOPLIST_FILE = RandomUserTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = mario.RandomUserTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomUser.app/RandomUser";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1205,15 +1087,6 @@
 			buildConfigurations = (
 				F2F81A5D26CC7C970094BC45 /* Debug */,
 				F2F81A5E26CC7C970094BC45 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2F81A5F26CC7C970094BC45 /* Build configuration list for PBXNativeTarget "RandomUserTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2F81A6026CC7C970094BC45 /* Debug */,
-				F2F81A6126CC7C970094BC45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
