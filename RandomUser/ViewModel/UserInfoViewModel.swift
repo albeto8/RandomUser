@@ -8,14 +8,6 @@
 import Foundation
 import UserFeature
 
-extension Date {
-   func getFormattedDate(format: String) -> String {
-        let dateformat = DateFormatter()
-        dateformat.dateFormat = format
-        return dateformat.string(from: self)
-    }
-}
-
 public final class UserInfoViewModel<Image> {
   public typealias Observer<T> = (T) -> Void
   
@@ -44,35 +36,19 @@ public final class UserInfoViewModel<Image> {
   }
   
   var memberSince: String {
-    let isoDate = model.registrationDate
-    let dateFormatter = DateFormatter()
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-    if let date = dateFormatter.date(from:isoDate) {
-      let formate = date.getFormattedDate(format: "yyyy")
-      
-      return "Member since \(formate)"
-    }
-    
-    return ""
+    let parsedDate = Date.parseDate(dateString: model.registrationDate, 
+                               outputFormat: "yyyy")
+    return "Member since \(parsedDate)"
   }
   
   var age: String {
     "\(model.age) Years"
   }
   
-  var birthday: String {
-    let isoDate = model.birthDay
-    let dateFormatter = DateFormatter()
-    dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-    if let date = dateFormatter.date(from:isoDate) {
-      let formate = date.getFormattedDate(format: "MM/dd")
-      
-      return "\(formate)"
-    }
-    
-    return ""
+  var birthday: String {    
+    let parsedDate = Date.parseDate(dateString: model.birthDay, 
+                               outputFormat: "MM/dd")
+    return "\(parsedDate)"
   }
   
   var gender: String {

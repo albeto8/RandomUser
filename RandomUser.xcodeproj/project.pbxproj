@@ -22,6 +22,7 @@
 		F226135326D01B1D00AF55B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3E26CC7C960094BC45 /* Assets.xcassets */; };
 		F226135526D01BB100AF55B4 /* ProfileUser.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F226135426D01BB100AF55B4 /* ProfileUser.xcassets */; };
 		F226135B26D021DE00AF55B4 /* ProfileUser.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F226135426D01BB100AF55B4 /* ProfileUser.xcassets */; };
+		F226135E26D02D1200AF55B4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F226135D26D02D1200AF55B4 /* Date+Extensions.swift */; };
 		F22E046C26D0013B0082867F /* UserFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; };
 		F22E047326D0013B0082867F /* UserFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = F22E046526D0013B0082867F /* UserFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F22E047A26D001E90082867F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
@@ -104,6 +105,7 @@
 		F226133326D014E800AF55B4 /* RandomUseriOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomUseriOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F226133A26D014E800AF55B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F226135426D01BB100AF55B4 /* ProfileUser.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ProfileUser.xcassets; sourceTree = "<group>"; };
+		F226135D26D02D1200AF55B4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		F22E046326D0013B0082867F /* UserFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22E046526D0013B0082867F /* UserFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFeature.h; sourceTree = "<group>"; };
 		F22E046626D0013B0082867F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		F213B9B826CDDCB200AFC69E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F226135C26D02D0100AF55B4 /* Helpers */,
 				F213B9B926CDDCBE00AFC69E /* UserInfoViewModel.swift */,
 				F241497626CEC4A300FCE288 /* ProfileViewModel.swift */,
 			);
@@ -251,6 +254,14 @@
 				F226133A26D014E800AF55B4 /* Info.plist */,
 			);
 			path = RandomUseriOSTests;
+			sourceTree = "<group>";
+		};
+		F226135C26D02D0100AF55B4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F226135D26D02D1200AF55B4 /* Date+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		F22E046426D0013B0082867F /* UserFeature */ = {
@@ -596,6 +607,7 @@
 				F226134626D0154500AF55B4 /* ProfileView.swift in Sources */,
 				F226134526D0154100AF55B4 /* UIView+Extensions.swift in Sources */,
 				F226134326D0153200AF55B4 /* UserInfoViewModel.swift in Sources */,
+				F226135E26D02D1200AF55B4 /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
