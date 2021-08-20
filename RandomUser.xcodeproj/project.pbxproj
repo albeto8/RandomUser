@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F213B9A626CD5DF500AFC69E /* RemoteUserImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9A526CD5DF500AFC69E /* RemoteUserImageDataLoader.swift */; };
 		F213B9A926CD603F00AFC69E /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = F213B9A826CD603F00AFC69E /* SnapshotTesting */; };
 		F213B9AC26CD609D00AFC69E /* ProfileSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9AB26CD609D00AFC69E /* ProfileSnapshotTests.swift */; };
 		F213B9AF26CD60F000AFC69E /* XCTestCase+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9AE26CD60F000AFC69E /* XCTestCase+Snapshot.swift */; };
@@ -15,8 +14,21 @@
 		F213B9B526CDDA4700AFC69E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9B426CDDA4700AFC69E /* ProfileView.swift */; };
 		F213B9BA26CDDCBE00AFC69E /* UserInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9B926CDDCBE00AFC69E /* UserInfoViewModel.swift */; };
 		F22E046C26D0013B0082867F /* UserFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; };
-		F22E047126D0013B0082867F /* UserFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22E047026D0013B0082867F /* UserFeatureTests.swift */; };
 		F22E047326D0013B0082867F /* UserFeature.h in Headers */ = {isa = PBXBuildFile; fileRef = F22E046526D0013B0082867F /* UserFeature.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F22E047A26D001E90082867F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
+		F22E047B26D001EE0082867F /* UserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8326CCC1570094BC45 /* UserLoader.swift */; };
+		F22E047C26D001F20082867F /* UserImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8526CCC6C50094BC45 /* UserImageDataLoader.swift */; };
+		F22E047D26D001FC0082867F /* ProfileUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */; };
+		F22E047E26D002000082867F /* RemoteUserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8126CCC0300094BC45 /* RemoteUserLoader.swift */; };
+		F22E047F26D002040082867F /* RemoteUserImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F213B9A526CD5DF500AFC69E /* RemoteUserImageDataLoader.swift */; };
+		F22E048026D002080082867F /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6726CC80B60094BC45 /* HTTPClient.swift */; };
+		F22E048126D0020C0082867F /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
+		F22E048626D002230082867F /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
+		F22E048726D002230082867F /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */; };
+		F22E048826D002230082867F /* LoadUserFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */; };
+		F22E048926D002230082867F /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
+		F22E048B26D002710082867F /* UserFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; };
+		F22E048C26D002710082867F /* UserFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F241497526CEC0CB00FCE288 /* ProfileUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */; };
 		F241497726CEC4A300FCE288 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497626CEC4A300FCE288 /* ProfileViewModel.swift */; };
 		F241497A26CEC6F000FCE288 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F241497926CEC6F000FCE288 /* MainQueueDispatchDecorator.swift */; };
@@ -26,21 +38,17 @@
 		F2F81A3D26CC7C940094BC45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3B26CC7C940094BC45 /* Main.storyboard */; };
 		F2F81A3F26CC7C960094BC45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A3E26CC7C960094BC45 /* Assets.xcassets */; };
 		F2F81A4226CC7C960094BC45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2F81A4026CC7C960094BC45 /* LaunchScreen.storyboard */; };
-		F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6726CC80B60094BC45 /* HTTPClient.swift */; };
-		F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
-		F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
-		F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */; };
-		F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7926CCAEEE0094BC45 /* User.swift */; };
-		F2F81A7C26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */; };
-		F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
-		F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */; };
-		F2F81A8226CCC0300094BC45 /* RemoteUserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8126CCC0300094BC45 /* RemoteUserLoader.swift */; };
-		F2F81A8426CCC1570094BC45 /* UserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8326CCC1570094BC45 /* UserLoader.swift */; };
-		F2F81A8626CCC6C50094BC45 /* UserImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A8526CCC6C50094BC45 /* UserImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F22E046D26D0013B0082867F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F22E046226D0013B0082867F;
+			remoteInfo = UserFeature;
+		};
+		F22E048D26D002710082867F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F2F81A2A26CC7C940094BC45 /* Project object */;
 			proxyType = 1;
@@ -56,6 +64,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F22E048F26D002710082867F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F22E048C26D002710082867F /* UserFeature.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F213B9A526CD5DF500AFC69E /* RemoteUserImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteUserImageDataLoader.swift; sourceTree = "<group>"; };
 		F213B9AB26CD609D00AFC69E /* ProfileSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSnapshotTests.swift; sourceTree = "<group>"; };
@@ -67,7 +89,6 @@
 		F22E046526D0013B0082867F /* UserFeature.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserFeature.h; sourceTree = "<group>"; };
 		F22E046626D0013B0082867F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F22E046B26D0013B0082867F /* UserFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F22E047026D0013B0082867F /* UserFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeatureTests.swift; sourceTree = "<group>"; };
 		F22E047226D0013B0082867F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F241497426CEC0CB00FCE288 /* ProfileUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIComposer.swift; sourceTree = "<group>"; };
 		F241497626CEC4A300FCE288 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22E048B26D002710082867F /* UserFeature.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +205,8 @@
 		F22E046426D0013B0082867F /* UserFeature */ = {
 			isa = PBXGroup;
 			children = (
+				F2F81A7826CCAED90094BC45 /* Profile User Feature */,
+				F2F81A6526CC807E0094BC45 /* Networking */,
 				F22E046526D0013B0082867F /* UserFeature.h */,
 				F22E046626D0013B0082867F /* Info.plist */,
 			);
@@ -192,10 +216,20 @@
 		F22E046F26D0013B0082867F /* UserFeatureTests */ = {
 			isa = PBXGroup;
 			children = (
-				F22E047026D0013B0082867F /* UserFeatureTests.swift */,
+				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
+				F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */,
+				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
+				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
 				F22E047226D0013B0082867F /* Info.plist */,
 			);
 			path = UserFeatureTests;
+			sourceTree = "<group>";
+		};
+		F22E048A26D002710082867F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F241497826CEC50F00FCE288 /* Composers */ = {
@@ -214,6 +248,7 @@
 				F22E046426D0013B0082867F /* UserFeature */,
 				F22E046F26D0013B0082867F /* UserFeatureTests */,
 				F2F81A3326CC7C940094BC45 /* Products */,
+				F22E048A26D002710082867F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -231,7 +266,6 @@
 		F2F81A3426CC7C940094BC45 /* RandomUser */ = {
 			isa = PBXGroup;
 			children = (
-				F2F81A6526CC807E0094BC45 /* Networking */,
 				F213B9B826CDDCB200AFC69E /* ViewModel */,
 				F213B9B326CDDA1F00AFC69E /* Controller */,
 				F213B9B026CD665300AFC69E /* View */,
@@ -252,10 +286,6 @@
 			children = (
 				F213B9AA26CD607500AFC69E /* Profile UI */,
 				F2F81A4E26CC7C970094BC45 /* Info.plist */,
-				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
-				F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */,
-				F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */,
-				F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */,
 			);
 			path = RandomUserTests;
 			sourceTree = "<group>";
@@ -263,7 +293,6 @@
 		F2F81A6526CC807E0094BC45 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				F2F81A7826CCAED90094BC45 /* Profile User Feature */,
 				F2F81A7526CCAE250094BC45 /* Profile User API */,
 				F2F81A6626CC80870094BC45 /* Shared API */,
 				F2F81A6926CC813E0094BC45 /* Shared API Infra */,
@@ -364,10 +393,12 @@
 				F2F81A2E26CC7C940094BC45 /* Sources */,
 				F2F81A2F26CC7C940094BC45 /* Frameworks */,
 				F2F81A3026CC7C940094BC45 /* Resources */,
+				F22E048F26D002710082867F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F22E048E26D002710082867F /* PBXTargetDependency */,
 			);
 			name = RandomUser;
 			productName = RandomUser;
@@ -483,6 +514,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F22E047C26D001F20082867F /* UserImageDataLoader.swift in Sources */,
+				F22E047F26D002040082867F /* RemoteUserImageDataLoader.swift in Sources */,
+				F22E047A26D001E90082867F /* User.swift in Sources */,
+				F22E048126D0020C0082867F /* URLSessionHTTPClient.swift in Sources */,
+				F22E048026D002080082867F /* HTTPClient.swift in Sources */,
+				F22E047B26D001EE0082867F /* UserLoader.swift in Sources */,
+				F22E047D26D001FC0082867F /* ProfileUserMapper.swift in Sources */,
+				F22E047E26D002000082867F /* RemoteUserLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,7 +529,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F22E047126D0013B0082867F /* UserFeatureTests.swift in Sources */,
+				F22E048626D002230082867F /* HTTPClientSpy.swift in Sources */,
+				F22E048926D002230082867F /* ProfileUserMapperTests.swift in Sources */,
+				F22E048826D002230082867F /* LoadUserFromRemoteUseCaseTests.swift in Sources */,
+				F22E048726D002230082867F /* SharedTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,23 +540,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F213B9A626CD5DF500AFC69E /* RemoteUserImageDataLoader.swift in Sources */,
 				F213B9B526CDDA4700AFC69E /* ProfileView.swift in Sources */,
 				F2F81A3A26CC7C940094BC45 /* ProfileViewController.swift in Sources */,
-				F2F81A8226CCC0300094BC45 /* RemoteUserLoader.swift in Sources */,
-				F2F81A6B26CC81520094BC45 /* URLSessionHTTPClient.swift in Sources */,
 				F241497A26CEC6F000FCE288 /* MainQueueDispatchDecorator.swift in Sources */,
 				F241497526CEC0CB00FCE288 /* ProfileUIComposer.swift in Sources */,
 				F2F81A3626CC7C940094BC45 /* AppDelegate.swift in Sources */,
-				F2F81A7726CCAE770094BC45 /* ProfileUserMapper.swift in Sources */,
 				F213B9B226CD668100AFC69E /* UIView+Extensions.swift in Sources */,
-				F2F81A8626CCC6C50094BC45 /* UserImageDataLoader.swift in Sources */,
 				F213B9BA26CDDCBE00AFC69E /* UserInfoViewModel.swift in Sources */,
-				F2F81A6826CC80B60094BC45 /* HTTPClient.swift in Sources */,
-				F2F81A8426CCC1570094BC45 /* UserLoader.swift in Sources */,
 				F2F81A3826CC7C940094BC45 /* SceneDelegate.swift in Sources */,
 				F241497726CEC4A300FCE288 /* ProfileViewModel.swift in Sources */,
-				F2F81A7A26CCAEEE0094BC45 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,10 +558,6 @@
 			files = (
 				F213B9AF26CD60F000AFC69E /* XCTestCase+Snapshot.swift in Sources */,
 				F213B9AC26CD609D00AFC69E /* ProfileSnapshotTests.swift in Sources */,
-				F2F81A8026CCB9BD0094BC45 /* SharedTestHelpers.swift in Sources */,
-				F2F81A7426CC83390094BC45 /* ProfileUserMapperTests.swift in Sources */,
-				F2F81A7E26CCB16D0094BC45 /* HTTPClientSpy.swift in Sources */,
-				F2F81A7C26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,6 +568,11 @@
 			isa = PBXTargetDependency;
 			target = F22E046226D0013B0082867F /* UserFeature */;
 			targetProxy = F22E046D26D0013B0082867F /* PBXContainerItemProxy */;
+		};
+		F22E048E26D002710082867F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F22E046226D0013B0082867F /* UserFeature */;
+			targetProxy = F22E048D26D002710082867F /* PBXContainerItemProxy */;
 		};
 		F2F81A4A26CC7C970094BC45 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -589,6 +624,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -618,6 +654,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -627,6 +664,7 @@
 		F22E047626D0013B0082867F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D4ZUPHQCZR;
@@ -640,6 +678,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mario.UserFeatureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -647,6 +686,7 @@
 		F22E047726D0013B0082867F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = D4ZUPHQCZR;
@@ -660,6 +700,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = mario.UserFeatureTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

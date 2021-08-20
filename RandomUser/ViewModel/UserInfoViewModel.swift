@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserFeature
 
 extension Date {
    func getFormattedDate(format: String) -> String {

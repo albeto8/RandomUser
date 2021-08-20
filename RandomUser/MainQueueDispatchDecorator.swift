@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserFeature
 
 final class MainQueueDispatchDecorator<T> {
   private let decoratee: T

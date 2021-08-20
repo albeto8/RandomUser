@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserFeature
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

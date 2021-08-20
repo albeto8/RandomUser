@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import RandomUser
+import UserFeature
 
 class ProfileUserMapperTests: XCTestCase {
   func test_map_throwsErrorWithInvalidJSON() throws {

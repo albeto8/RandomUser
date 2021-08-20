@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import RandomUser
+import UserFeature
 
 class ProfileSnapshotTests: XCTestCase {
   func test_profileWithContent() {
@@ -47,7 +48,7 @@ class ProfileSnapshotTests: XCTestCase {
 
 extension User {
   
-  static let prototypeUser = makeUserItem(nameTitle: "Mr", 
+  static let prototypeUser = User(nameTitle: "Mr", 
                                           firstName: "Maxime", 
                                           lastName: "Anderson", 
                                           gender: "male", 
@@ -57,15 +58,15 @@ extension User {
                                           phone: "829-826-3101", 
                                           cellPhone: "322-277-6834", 
                                           userPictureURL: URL(string: "http://any-url.com")!, 
-                                          registrationDate: "2014-01-13T23:04:59.882Z", 
+                                          registrationDate: "2014-01-13T23:04:59.882Z",
+                                          address: Address(
                                           streetNumber: 12, 
                                           streetName: "Pine Rd", 
                                           city: "Field", 
                                           state: "Newfoundland and Labrador", 
                                           country: "Canada", 
                                           latitude: "-68.1548", 
-                                          longitude: "-73.3002", 
-                                          postcode: "B9Y 6D8").model  
+                                          longitude: "-73.3002"))
 }
 
 extension UIImage {

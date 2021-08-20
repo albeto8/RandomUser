@@ -8,18 +8,18 @@
 import Foundation
 
 public struct User: Equatable {
-  let nameTitle: String
-  let firstName: String
-  let lastName: String
-  let gender: String
-  let email: String
-  let birthDay: String
-  let age: Int
-  let phone: String
-  let cellPhone: String
-  let userPictureURL: URL?
-  let registrationDate: String 
-  let address: Address
+  public let nameTitle: String
+  public let firstName: String
+  public let lastName: String
+  public let gender: String
+  public let email: String
+  public let birthDay: String
+  public let age: Int
+  public let phone: String
+  public let cellPhone: String
+  public let userPictureURL: URL?
+  public let registrationDate: String 
+  public let address: Address
   
   public init(nameTitle: String, firstName: String, lastName: String, gender: String, email: String, birthDay: String, age: Int, phone: String, cellPhone: String, userPictureURL: URL?, registrationDate: String, address: Address) {
     self.nameTitle = nameTitle
@@ -38,13 +38,13 @@ public struct User: Equatable {
 }
 
 public struct Address: Equatable {
-  let streetNumber: Int
-  let streetName: String
-  let city: String
-  let state: String
-  let country: String
-  let latitude: String
-  let longitude: String
+  public let streetNumber: Int
+  public let streetName: String
+  public let city: String
+  public let state: String
+  public let country: String
+  public let latitude: String
+  public let longitude: String
   
   public init(streetNumber: Int, streetName: String, city: String, state: String, country: String, latitude: String, longitude: String) {
     self.streetNumber = streetNumber

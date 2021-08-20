@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UserFeature
 
 final class ProfileUIComposer {
   private init() {}

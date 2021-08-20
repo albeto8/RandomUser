@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RandomUser
+import UserFeature
 
 final class HTTPClientSpy: HTTPClient {
   private struct Task: HTTPClientTask {

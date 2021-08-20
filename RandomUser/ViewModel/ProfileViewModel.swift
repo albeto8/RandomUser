@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UserFeature
 
 final class ProfileViewModel {
   private let loader: UserLoader

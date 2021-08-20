@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import RandomUser
+import UserFeature
 
 class LoadUserFromRemoteUseCaseTests: XCTestCase {
   func test_init_doesNotRequestURL() {

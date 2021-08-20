@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import RandomUser
+import UserFeature
 
 func makeUserItem(nameTitle: String,
                           firstName: String, 
