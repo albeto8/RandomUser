@@ -8,6 +8,12 @@ App is divided in three targets:
 2.  **RandomUseriOS:** Contains ViewModels, Controller and View
 3.  **RandomUser:** Main app that composes **UserFeature** and **RandomUseriOS** modules
 
+![](/targets.png)
+
+## Tests
+
+![](/tests.png)
+
 ## External libraries
 
 - SnapshotTesting for testing UI
@@ -21,8 +27,6 @@ Snapshots were recorded using **Xcode Version 12.5.1** and **iPod touch (7th gen
 Light Mode             |  Dark Mode
 :-------------------------:|:-------------------------:
 ![](/RandomUseriOSTests/Profile%20UI/__Snapshots__/ProfileSnapshotTests/test_profileWithContent.light-iPhoneX.png)  |  ![](/RandomUseriOSTests/Profile%20UI/__Snapshots__/ProfileSnapshotTests/test_profileWithContent.dark-iPhoneX.png)
-
-## Tests
 
 ## Random User App Architecture
 
