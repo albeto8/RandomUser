@@ -7,14 +7,15 @@
 
 import UIKit
 import UserFeature
+import Combine
 import RandomUseriOS
 
 final class ProfileUIComposer {
   private init() {}
   
-  static func controllerWith(userLoader: UserLoader, 
+  static func controllerWith(userLoader: @escaping () -> AnyPublisher<User, Error>, 
                              imageLoader: UserImageDataLoader) -> ProfileViewController {
-    let profileViewModel = ProfileViewModel(loader: MainQueueDispatchDecorator(decoratee: userLoader))
+    let profileViewModel = ProfileViewModel(loader: userLoader)
     let controller = ProfileViewController(profileViewModel: profileViewModel)
     
     profileViewModel.onFetch = { user in

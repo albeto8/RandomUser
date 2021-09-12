@@ -24,14 +24,6 @@ final class MainQueueDispatchDecorator<T> {
   }
 }
 
-extension MainQueueDispatchDecorator: UserLoader where T == UserLoader {
-  func load(completion: @escaping (UserLoader.Result) -> Void) {
-    decoratee.load { [weak self] result in
-      self?.dispatch { completion(result) }
-    }
-  }
-}
-
 extension MainQueueDispatchDecorator: UserImageDataLoader where T == UserImageDataLoader {
   func loadImageData(from url: URL, completion: @escaping (UserImageDataLoader.Result) -> Void) -> UserImageDataLoaderTask {
     decoratee.loadImageData(from: url) { [weak self] result in

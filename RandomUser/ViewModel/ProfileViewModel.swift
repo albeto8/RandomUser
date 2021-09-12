@@ -7,27 +7,30 @@
 
 import Foundation
 import UserFeature
+import Combine
 
 public final class ProfileViewModel {
-  private let loader: UserLoader
+  private let loader: () -> AnyPublisher<User, Error>
+  private var cancellable: Cancellable?
   
-  public init(loader: UserLoader) {
+  public init(loader: @escaping () -> AnyPublisher<User, Error>) {
     self.loader = loader
   }
   
   public var onFetch: ((User) -> Void)?
   
   public func fetch() {
-    loader.load { [weak self] result in
-      guard let self = self else { return }
-      
-      switch result {
-      case .success(let user):
-        self.onFetch?(user)
+    cancellable = loader()
+      .sink(receiveCompletion: { completion in
+      switch completion {
+      case .failure:
+        // TODO: Handle error
+        print("Network failure!!!")
         
-      case .failure(let error):
-        print("Networking Error!! \(error)")
-    }
-    }
+      case .finished: break
+      }
+    }, receiveValue: { [weak self] user in
+      self?.onFetch?(user)
+    })
   }
 }
