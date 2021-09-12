@@ -7,12 +7,6 @@
 
 import Foundation
 
-public protocol UserImageDataLoaderTask {
-  func cancel()
-}
-
-public protocol UserImageDataLoader {
-  typealias Result = Swift.Result<Data, Error>
-  
-  func loadImageData(from url: URL, completion: @escaping (Result) -> Void) -> UserImageDataLoaderTask
+public protocol UserImageDataLoader {  
+  func loadImageData(from url: URL) throws -> Data
 }

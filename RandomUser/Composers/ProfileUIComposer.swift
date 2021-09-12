@@ -14,13 +14,13 @@ final class ProfileUIComposer {
   private init() {}
   
   static func controllerWith(userLoader: @escaping () -> AnyPublisher<User, Error>, 
-                             imageLoader: UserImageDataLoader) -> ProfileViewController {
+                             imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>) -> ProfileViewController {
     let profileViewModel = ProfileViewModel(loader: userLoader)
     let controller = ProfileViewController(profileViewModel: profileViewModel)
     
     profileViewModel.onFetch = { user in
       let userInfoViewModel = UserInfoViewModel<UIImage>(user: user, 
-                                                         imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader),
+                                                         imageLoader: imageLoader,
                                                          imageTransformer: UIImage.init)
       controller.display(userInfoViewModel)
       controller.loadUserImage()

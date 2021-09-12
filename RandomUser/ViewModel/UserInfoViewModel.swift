@@ -7,19 +7,21 @@
 
 import Foundation
 import UserFeature
+import Combine
 
 public final class UserInfoViewModel<Image> {
   public typealias Observer<T> = (T) -> Void
   
   private let model: User
-  private let imageLoader: UserImageDataLoader
+  private let imageLoader: (URL) -> AnyPublisher<Data, Error>
   private let imageTransformer: (Data) -> Image?
+  private var cancellable: Cancellable?
   
   public var onImageLoad: Observer<Image>?
   var onImageLoadingStateChange: Observer<Bool>?
   
   public init(user: User, 
-       imageLoader: UserImageDataLoader, 
+              imageLoader: @escaping (URL) -> AnyPublisher<Data, Error>, 
        imageTransformer: @escaping (Data) -> Image?) {
     self.model = user
     self.imageLoader = imageLoader
@@ -70,17 +72,20 @@ public final class UserInfoViewModel<Image> {
     
     onImageLoadingStateChange?(true)
     
-    _ = imageLoader.loadImageData(from: userPictureURL) { [weak self] result in
-      self?.handle(result)
-    }
-  }
-  
-  private func handle(_ result: UserImageDataLoader.Result) {
-    if let image = (try? result.get()).flatMap(imageTransformer) {
-      onImageLoad?(image)
-    } else {
-      //TODO Handle sad path for invalid image
-    }
-    onImageLoadingStateChange?(false)
+    cancellable = imageLoader(userPictureURL).sink(receiveCompletion: { completion in
+      switch completion {
+      case .failure:
+        //TODO Handle sad path for invalid image
+        print("Network failure!!!")
+        
+      case .finished: break
+      }
+    }, receiveValue: { [weak self] imageData in
+      if let image = self?.imageTransformer(imageData) {
+        self?.onImageLoad?(image)
+      } else {
+        //TODO Handle sad path for invalid image
+      }
+    })
   }
 }

@@ -21,12 +21,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     guard let scene = (scene as? UIWindowScene) else { return }
     
     let client = URLSessionHTTPClient(session: .shared)
-    
-    let imageLoader = RemoteUserImageDataLoader(client: client)
-    
+        
     let controller = ProfileUIComposer.controllerWith(
       userLoader: makeRemoteUserLoader, 
-      imageLoader: imageLoader)
+      imageLoader: makeRemoteUserImageLoader)
     
     window = UIWindow(windowScene: scene)
     window?.rootViewController = controller
@@ -39,6 +37,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       .getPublisher(url: url)
       .dispatchOnMainQueue()
       .tryMap(ProfileUserMapper.map)
+      .eraseToAnyPublisher()
+  }
+  
+  private func makeRemoteUserImageLoader(url: URL) -> AnyPublisher<Data, Error> {
+    return httpClient
+      .getPublisher(url: url)
+      .dispatchOnMainQueue()
+      .tryMap(ProfileUserImageMapper.map)
       .eraseToAnyPublisher()
   }
 }

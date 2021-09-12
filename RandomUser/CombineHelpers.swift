@@ -24,6 +24,21 @@ public extension HTTPClient {
   }
 }
 
+public extension UserImageDataLoader {
+  typealias Publisher = AnyPublisher<Data, Error>
+  
+  func loadImageDataPublisher(from url: URL) -> Publisher {
+    return Deferred {
+      Future { completion in
+        completion(Result {
+          try self.loadImageData(from: url)
+        })
+      }
+    }
+    .eraseToAnyPublisher()
+  }
+}
+
 extension Publisher {
   func dispatchOnMainQueue() -> AnyPublisher<Output, Failure> {
     receive(on: DispatchQueue.immediateWhenOnMainQueueScheduler).eraseToAnyPublisher()
