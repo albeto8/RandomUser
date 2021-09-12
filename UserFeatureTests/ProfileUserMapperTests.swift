@@ -8,6 +8,7 @@
 import XCTest
 import UserFeature
 
+//TODO: Use HTTPURLResponse parameter for tests
 class ProfileUserMapperTests: XCTestCase {
   func test_map_throwsErrorWithInvalidJSON() throws {
     let invalidJSON = Data("invalid json".utf8)

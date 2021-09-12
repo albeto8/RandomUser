@@ -33,7 +33,6 @@
 		F22E048126D0020C0082867F /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A6A26CC81520094BC45 /* URLSessionHTTPClient.swift */; };
 		F22E048626D002230082867F /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */; };
 		F22E048726D002230082867F /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */; };
-		F22E048826D002230082867F /* LoadUserFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */; };
 		F22E048926D002230082867F /* ProfileUserMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */; };
 		F22E048B26D002710082867F /* UserFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; };
 		F22E048C26D002710082867F /* UserFeature.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F22E046326D0013B0082867F /* UserFeature.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -134,7 +133,6 @@
 		F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapperTests.swift; sourceTree = "<group>"; };
 		F2F81A7626CCAE770094BC45 /* ProfileUserMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUserMapper.swift; sourceTree = "<group>"; };
 		F2F81A7926CCAEEE0094BC45 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		F2F81A7D26CCB16D0094BC45 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		F2F81A7F26CCB9BD0094BC45 /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		F2F81A8526CCC6C50094BC45 /* UserImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserImageDataLoader.swift; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 			children = (
 				F296FE2526D0719B001EE169 /* Helpers */,
 				F2F81A7326CC83390094BC45 /* ProfileUserMapperTests.swift */,
-				F2F81A7B26CCAFF40094BC45 /* LoadUserFromRemoteUseCaseTests.swift */,
 				F22E047226D0013B0082867F /* Info.plist */,
 			);
 			path = UserFeatureTests;
@@ -654,7 +651,6 @@
 			files = (
 				F22E048626D002230082867F /* HTTPClientSpy.swift in Sources */,
 				F22E048926D002230082867F /* ProfileUserMapperTests.swift in Sources */,
-				F22E048826D002230082867F /* LoadUserFromRemoteUseCaseTests.swift in Sources */,
 				F22E048726D002230082867F /* SharedTestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

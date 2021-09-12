@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Combine
 @testable import RandomUseriOS
 @testable import UserFeature
 
@@ -26,7 +27,7 @@ class ProfileSnapshotTests: XCTestCase {
   // MARK: - Helpers
   
   private func makeSUT(file: StaticString = #file, line: UInt = #line) -> ProfileViewController {
-    let profileViewModel = ProfileViewModel(loader: UserLoaderDummy())
+    let profileViewModel = ProfileViewModel(loader: makeUserLoaderDummy)
     let sut = ProfileViewController(profileViewModel: profileViewModel)
     
     sut.loadViewIfNeeded()
@@ -34,10 +35,10 @@ class ProfileSnapshotTests: XCTestCase {
     return sut
   }
   
-  private class UserLoaderDummy: UserLoader {
-    func load(completion: @escaping (UserLoader.Result) -> Void) {
-      completion(.success(User.prototypeUser))
-    }
+  private func makeUserLoaderDummy() -> AnyPublisher<User, Error> {
+    return Just(User.prototypeUser)
+      .setFailureType(to: Error.self)
+      .eraseToAnyPublisher()
   }
   
   private class UserImageDataLoaderDummy: UserImageDataLoader {

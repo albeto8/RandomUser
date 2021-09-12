@@ -89,7 +89,9 @@ public final class ProfileUserMapper {
     }
   }
   
-  public static func map(data: Data, from response: HTTPURLResponse) throws -> User {
+  //TODO: Handle HTTPURLResponse parameter
+  public static func map(data: Data, 
+                         from response: HTTPURLResponse = HTTPURLResponse()) throws -> User {
     do {
       let root = try JSONDecoder().decode(Root.self, from: data)
       guard let mappedUser = root.toModel else {
