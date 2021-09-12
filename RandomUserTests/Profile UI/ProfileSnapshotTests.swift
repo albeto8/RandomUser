@@ -15,7 +15,7 @@ class ProfileSnapshotTests: XCTestCase {
     let sut = makeSUT()
     
     sut.display(UserInfoViewModel<UIImage>(user: User.prototypeUser, 
-                                           imageLoader: UserImageDataLoaderDummy(),
+                                           imageLoader: makeUserImageDataLoaderDummy,
                                            imageTransformer: UIImage.init))
     
     sut.display(userImage: UIImage(named: "randomUser1", in: Bundle(for: ProfileViewController.self), with: nil)!)
@@ -41,14 +41,10 @@ class ProfileSnapshotTests: XCTestCase {
       .eraseToAnyPublisher()
   }
   
-  private class UserImageDataLoaderDummy: UserImageDataLoader {
-    func loadImageData(from url: URL, completion: @escaping (UserImageDataLoader.Result) -> Void) -> UserImageDataLoaderTask {      
-      return UserImageDataLoaderTaskDummy()
-    }
-  }
-  
-  private struct UserImageDataLoaderTaskDummy: UserImageDataLoaderTask {
-    func cancel() {}
+  private func makeUserImageDataLoaderDummy(url: URL) -> AnyPublisher<Data, Error> {
+    return Just(Data())
+      .setFailureType(to: Error.self)
+      .eraseToAnyPublisher()
   }
 }
 
